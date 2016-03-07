@@ -1,1 +1,1 @@
-# projektPZ
+# projekt z Programowania Zespolowego
