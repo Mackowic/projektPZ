@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.Popraw_daneController">
+   <children>
+      <Label layoutX="36.0" layoutY="34.0" text="Popraw dane">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="69.0" layoutY="104.0" text="Imię:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="f_imie" layoutX="225.0" layoutY="103.0" prefHeight="22.0" prefWidth="157.0" />
+      <Label layoutX="71.0" layoutY="142.0" text="Nazwisko:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="f_nazwisko" layoutX="225.0" layoutY="141.0" prefHeight="22.0" prefWidth="157.0" />
+      <Label layoutX="72.0" layoutY="178.0" text="Login:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="f_login" layoutX="225.0" layoutY="177.0" prefHeight="22.0" prefWidth="157.0" />
+      <Label layoutX="72.0" layoutY="212.0" text="Adres e-mail:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="f_email" layoutX="225.0" layoutY="211.0" prefHeight="22.0" prefWidth="157.0" />
+      <Label layoutX="72.0" layoutY="246.0" text="Telefon:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="f_telefon" layoutX="225.0" layoutY="245.0" prefHeight="22.0" prefWidth="157.0" />
+      <Button fx:id="b_zmien" layoutX="127.0" layoutY="287.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="133.0" text="Zmień">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="b_anuluj" layoutX="319.0" layoutY="287.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="133.0" text="Anuluj">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
