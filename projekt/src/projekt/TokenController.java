@@ -20,71 +20,70 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
+ * FXML Controller class
  *
  * @author Maciek
  */
-public class mainController implements Initializable {
+public class TokenController implements Initializable {
+    @FXML
+    private TextField f_klucz;
+    @FXML
+    private TextField f_nowe_haslo;
+    @FXML
+    private TextField f_powtorz_haslo;
+    @FXML
+    private Button b_anuluj;
+    @FXML
+    private Button b_ok;
 
-
-    @FXML
-    private Button b_zadania;
-    @FXML
-    private Button b_projekty;
-    @FXML
-    private Button b_moje_dane;
-    @FXML
-    private Button b_uzytkownicy;
-    @FXML
-    private Button b_wyloguj;
-    
-    @FXML
-    private Label l_name;
-    @FXML
-    private Button b_ustwaienia_systemowe;
-    
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-    
-     b_moje_dane.setOnAction(new EventHandler<ActionEvent>() {
+       
+         b_anuluj.setOnAction(new EventHandler<ActionEvent>() {
     @Override
     public void handle(ActionEvent actionEvent) {
          
         try {
             
-            Parent moje_dane_parent = FXMLLoader.load(getClass().getResource("moje_dane.fxml"));
-            Scene moje_dane_scene = new Scene(moje_dane_parent);
-            Stage moje_dane_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            moje_dane_stage.setScene(moje_dane_scene);
-            moje_dane_stage.show();
-            
-        } catch (IOException ex) {
-            Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
-        }
- 
-    }
-});
-
- b_wyloguj.setOnAction(new EventHandler<ActionEvent>() {
-    @Override
-    public void handle(ActionEvent actionEvent) {
-    
-        try {
-            
-             Parent login_parent = FXMLLoader.load(getClass().getResource("login.fxml"));
+            Parent login_parent = FXMLLoader.load(getClass().getResource("login.fxml"));
                 Scene login_scene = new Scene(login_parent);
                 Stage login_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 login_stage.setScene(login_scene);
                 login_stage.show();
-                
+            
         } catch (IOException ex) {
             Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
         }
  
     }
 });
-    }} 
+  
+ b_ok.setOnAction(new EventHandler<ActionEvent>() {
+    @Override
+    public void handle(ActionEvent actionEvent) {
+         
+        try {
+            
+            Parent login_parent = FXMLLoader.load(getClass().getResource("login.fxml"));
+                Scene login_scene = new Scene(login_parent);
+                Stage login_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                login_stage.setScene(login_scene);
+                login_stage.show();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+    }
+});         
+         
+    }    
+    
+}
