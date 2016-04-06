@@ -60,9 +60,11 @@ public class Zmien_hasloController implements Initializable {
              System.out.println(login.ble2);
 if(login.ble2.equals(f_stare_haslo.getText()) && f_nowe_haslo.getText().equals(f_powtorz_haslo.getText()))             
 {
+    
+hashowanie hash = new hashowanie();
 Class.forName("com.mysql.jdbc.Driver");
 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
-PreparedStatement statment = con.prepareStatement("UPDATE hasla SET Haslo='"+f_nowe_haslo.getText()+"' WHERE  Haslo='"+login.ble2+"'");
+PreparedStatement statment = con.prepareStatement("UPDATE hasla SET Haslo='"+hash.crypt(f_nowe_haslo.getText())+"' WHERE  Haslo='"+login.ble2+"'");
 statment.executeUpdate(); 
 
 try {
