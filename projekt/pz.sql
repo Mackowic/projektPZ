@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Czas generowania: 31 Mar 2016, 04:49
+-- Czas generowania: 06 Kwi 2016, 21:10
 -- Wersja serwera: 5.6.24
 -- Wersja PHP: 5.6.8
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `hasla` (
   `idHasla` int(10) unsigned NOT NULL,
-  `Haslo` varchar(10) DEFAULT NULL
+  `Haslo` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `hasla` (
 
 INSERT INTO `hasla` (`idHasla`, `Haslo`) VALUES
 (1, '1'),
-(2, 'test');
+(2, '098f6bcd4621d373cade4e832627b4f6');
 
 -- --------------------------------------------------------
 
