@@ -32,6 +32,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.sql.*;
+import javafx.scene.control.Hyperlink;
 
 /**
  *
@@ -51,8 +52,12 @@ public class loginController  implements Initializable {
     @FXML
     private Label l_error;
     
+    @FXML
+    private Hyperlink zapomnialem_hasla;
+    
     public  String login, haslo,login2,haslo2;
     public static String ble,ble2;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     
@@ -122,6 +127,24 @@ hashowanie hash = new hashowanie();
       
 });
 
+        
+        zapomnialem_hasla.setOnAction(new EventHandler<ActionEvent>() {
+    @Override
+    public void handle(ActionEvent actionEvent) {
+        
+        try {
+            Parent zapomnialem_parent = FXMLLoader.load(getClass().getResource("zapomnialem_hasla.fxml"));
+            Scene zapomnialem_scene = new Scene(zapomnialem_parent);
+            Stage zapomnialem_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            zapomnialem_stage.setScene(zapomnialem_scene);
+            zapomnialem_stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(loginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+           
+       } 
+      });
 
     } 
 

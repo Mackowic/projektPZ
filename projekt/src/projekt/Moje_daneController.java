@@ -67,7 +67,7 @@ ResultSet result = statment.executeQuery();
 if(result.next()){
 l_imie.setText(result.getString(1));
 l_nazwisko.setText(result.getString(2));
-l_email.setText(result.getString(3));
+l_login.setText(result.getString(3));
 l_telefon.setText(result.getString(4));// do testowania
 }
   
