@@ -11,6 +11,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -53,6 +54,28 @@ public class Popraw_daneController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+      
+        try {
+            loginController login = new loginController();
+             System.out.println(login.ble);
+Class.forName("com.mysql.jdbc.Driver");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
+PreparedStatement statment = con.prepareStatement("select Imie, Nazwisko, Mail, Telefon  from uzytkownicy where Mail='"+login.ble+"'");
+ResultSet result = statment.executeQuery(); 
+
+if(result.next()){
+f_imie.setText(result.getString(1));
+f_nazwisko.setText(result.getString(2));
+f_login.setText(result.getString(3));
+f_telefon.setText(result.getString(4));// do testowania
+}
+  
+         
+   } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Moje_daneController.class.getName()).log(Level.SEVERE, null, ex);
+      } catch (SQLException ex) {
+            Logger.getLogger(Moje_daneController.class.getName()).log(Level.SEVERE, null, ex);
+        }      
         
       b_zmien.setOnAction(new EventHandler<ActionEvent>() {
     @Override
@@ -64,7 +87,7 @@ public class Popraw_daneController implements Initializable {
          loginController login = new loginController();
          Class.forName("com.mysql.jdbc.Driver");
          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
-         PreparedStatement statment = con.prepareStatement("UPDATE uzytkownicy SET imie='"+f_imie.getText()+"', nazwisko='"+f_nazwisko.getText()+"' meil='"+f_email.getText()+"' telefon='"+f_telefon.getText()+"' WHERE  Haslo='"+login.ble2+"'");
+         PreparedStatement statment = con.prepareStatement("UPDATE uzytkownicy SET imie='"+f_imie.getText()+"', nazwisko='"+f_nazwisko.getText()+"', mail='"+f_login.getText()+"' ,telefon='"+f_telefon.getText()+"' WHERE  idHasla='"+login.id+"'");
          statment.executeUpdate();
          try {
              

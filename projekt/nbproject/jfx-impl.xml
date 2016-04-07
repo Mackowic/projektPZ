@@ -810,76 +810,313 @@
     </target>
     <target name="-check-webstart-in-unix" depends="-pre-check-webstart-in-unix" if="running.on.unix-active.webstart.executable">
         <local name="exec.which.javaws.result"/>
-        <exec executable="command" failifexecutionfailsKÜû/kªÁ¬¼á°ê~‘¹;R`,ä!­n¥ÛXV™Í¹f×°¯Šuu¬iº³Kí¾ÌõÇ”Ýzgžg·Úµ+­tÏW°Ã,ù]àì =Àur	ö?‚pÝ™Ú!Ì9*²Þ4Š¹>òe‚€Vëïç8Œi‡1Ü›_×0‚FÙ8‚˜Z1}l——m~‡˜cQž™Ew¤PÐ£f p©Ù,­jgì•Œ6£F5Ÿx]dŸ6óšÞÏ`6’?	’àaKx|íÆi,_!¯b<^£º½ÎGÃT¶7y¿Åñ·¹òêò¯È©w©ƒ¿¡Îý–Gúwx¿'»ÿ€gðGìÇŸ˜Ä?+¨W°‡hWXdWÜõsm«â®0éˆ—ˆ#^"Ž¸‰ÖNÅ˜1Ž;6žm´QHˆ!ïUÌ³…¥|ø+úÛûòLŒå\M¹œÆDSvÇúº¹	o–„×:	¿’	ofÒÂmþæãQÿÑé{áßjÒ3«’ôDLiKïð‰w÷3d?fÍÂè9ªng<]¬»øÈéò»Xþ³ÿÁ§è?1ÿâÕöoJÄø|0ž@;Q_©iØ UÁÐü¸J`—ÄmZwh5
-§ÅD`Ñ§Ýb»½ÄíÆµ*q­¤Š#SIT,SÎXÂ™òá3*?×ÁRâ!Þ'ÁšÿPK
-   5H‚GÀRßW
-    +   com/mysql/jdbc/ConnectionGroupManager.class­Xù{Tå~ïì™¹	Ö$“EÁˆ˜0”M°­\f.Éàd&ÎL0hë‚j¥Å­E[km5.Xt ‚K[Åk­]Ô§Oûø‹Dé{¾{s3[$Eùæ»ç;ß9ïÙï÷ÿûêë ÎÃA,Ä®*,ÀíAœ…;d¹Ó»‚ðânyØ-g÷Èroçã¾ ~Ä,ÜïÇž ª±Kx~Â±W–‚d|0„‡ðpà'²üTdí“åQayLv?“åç²<.Ë/dyB–_Š€'e÷+?~-ÂwùñTOª fãYžÊn?ž¢»äáy‘ý°<î—åY~À‹òû’È;àÇA±€òùñ²†ªW­^¿æÚÎek4Œn7vÍ}¹D²ù
-#ÛÝiô.&ÇÚDWÊÈõeL+Ê9Z-RÒHu5¯Íe©®ÅÑXº§¹ggöúdóöøÖXs[:•2c¹D:µ"“îë]¼„R½=[M#¥aa)óöžþæhÚˆ_jPdÌ,¹Ûi¤Œ.3Cc»ìUfW"›33f¼£§_ƒ¶Yƒ¯5‘Jä–hp×ÕoÐàiKÇ‰{L4‘2WõQgf±5IJm43’ŒLBžm¢'×Èj˜{
-†ALí2s%‡í©lN€k¸ ®Ü5õ§òýÝ%›UFBY&®SfžZV(c{Hù'¸¼?föÊyÖW(½½†q$ªm¶ÓÈÅº©RCCEK†S¡-LZB¨SËŠ¿‡×š9¡¦5L*öùÎÞ!¿ŸWÌÞ:šŠŽÓ¨ÄùxüŠt6§¡®‚àrÊfÉ.WŒÎq%ÎÑ0¡@s;ýmäÒ’žn%2´-YÞÏ@(oNÉsž>|	å2Òv˜bD[º/Eµ+¹¨5b(N³Jý^Æ.²g8²£é®#8àëu0ScÖ¹F¥3)kºwf+Š‘Ô[—ÎÉ¼âAfÔô¡³‘0hRÅ4¢Š)Cë2F*k3fOÚò[À¨’@r Æº6ÞâPD
-þœ‘³µ¸¸ÇÛS9Óê3Z²¸¦¬ÎìÊnÕ.“ri_"W×ÜY“Ý0BZUöÂb-•º{9@¹x&ÍîÇ%9JL¨«ho 5–´;vpmº/3/OHK˜V¹çÎ:.ÁR‹p¡Ž<ë8‚AfÈ×—‰\zUÇQÓq1–èXŒVQ,Õ ¯á0ó¯x¸±"t¼Ž7üxSÇoñ;¿ekp¥oéxÇýxGÇ»xOÇûø@ÇÕ8¡ãC¼¡ãøH‡‰?êHÈò'¡%e—’%-K/6Ér¢L-½ÎéVê*?þ<ÄYèzÁÇ:>ÁG&:þŠOuü—å²ü“)Õ¨ã3Ü¬ãsÜÌYu:SXÃìQÊ"sVoÝNöE’›k¯Œ:ƒ‰½2–NåŒD*»ÒÜYÒY¬«‹ë9æÝÌ¶’ª:-'Ð X¼îÞ>Š¹°‚˜Q
-ö™×÷I¦·o‡‘ì3¹™R7âd¬.ê¶Ò‡ãñeI–v¸®òe)™X=•ÎY=	{Öpªé-˜AµåTŽ;¾=­2ûsê=‰Z<)õP\¤Ž•“*¸OÀ1C;«7aõlšïÉ&n4•Ôvµ²+×ÈkF25ã6OuQ‹!å»ÕÛDQ{}ÅH¤r„‹^»ÎÜ©Ü7®Èbë5Ãgôöš):¬iTw¸UžQ×öuÇM§È´Rþ@.m‘4èC/TòJÇWùüÖ ÜJƒ†‹øäBŸÙ‘¸J{âo-ÏØç¸.ãS3Ù©àm8í€ºr)WŸ"ÎB¤‹)\†åü­ÇåXa_î¡:—ÐÂÕ‡{j¬çMx_:
-ï&JõE…ÉÃ¿1ò’£`DÕ„‰D1çb.?™ÚÔ™Š+ÐÎßé¡+©²JÚ*ÏDu‹Ek"°žQ•GÐs1B+Ð±€Æ,„Ÿþ¨æ­qôF'©ò¬¢ÄÕŽ1(Yd†
-L(ñÇ’„lxAiÜ6¨÷øëæïò†ãÐjCyèû0õ(ª7FM4BÁyŒÄXèŠ!ò°ºÎÆãE1N1¨hŠò9Ä	îª©~"ƒp6CpÕ7À"úf1½ÓF«\-›ˆ1¸
-kÌå<oWžÛ´E¨Á:Þpa½ík‹Ï,®Nöl¤æ«±ÉöÐ3Äããï¼†#¨]Õ4ˆñZ<aÏ &hØ‡°ì&j %-Þ°7rF“Nþç€cG-±ò½Ä1‹š¨©M¹ÕÇg?6•—VÎÄ5øŽâg£—Ýw¹ÓÔî{¼á"g=e]KÙëí X”-¤TÁÀVõ1ÅK-Cô
-½¡°ŸÙä@÷DÂž<&[a8ù¯È ¦hØïXaeÕfˆ²š8ëˆlqˆ%ð¬ŽXÄ&Ð*±Ä­l´,	0c*ÕÌvÁ?ë,îœm!­Šã~›mÉÓ”)ºç»[+Ù0­À†iwŠacwëÀÉO»ó…ô1JŽÓã&si«¯ÛA6ÚB_Ãž2„~¾ÞÅ*í"7{+"èu‡baNœ>æ©#aNRrµ¤ˆ1MÌ×Ë˜·;sÂÎ˜AµÓ¦3RŒ¼¾ ycAÆ¨ý´¡ìù¸±${¦ª
-ê£üŒòÌ–~Ú°“¶ÜTASœjvìé°íñ²¦Å
-É’‹qsi8ƒ¬³-ÎY\Y–,Š†èŸ_µ´rO-¬áaogKŽ¥Ñ¸…’o¥ÿnÃlì¢‡ïpÐÏf[•<ÆŽ†§,=Ñp—ECê7õM0ŸYónj¿‡Zî%Æûˆãþosú›`ž^ó^j€Z$Æ‡ˆã‘os/ëÈ^—ØÃÜßqÁŒáw "?Jƒ+Ï~§5ûíÖ\8Vùb‹ýÿ‡ÆÌ
-Cãqù“íô	'OkhdN94
-ñg‘³Béò)7_ÙÍà,6ƒ³K›A² ¨^ ¶X¦úÂ>›é2Ù)®Y-þÆ°ç¸ø0»%¼ÝssZä1×³E=’-D[šÉ‘“{¢ž VÕ†ØvÑ0ˆFªQú”šKdg«ñ5	š¦MaŸú[—Ç¼M‚„Êóh&­^hµç¶xN¾Ö”ÇyÃ/›kà)úèizx€éY6¤çè¡çéíýôÚlõ/²`38„Ûñ2î¢Ô=8Ì¤=‚Wî^å÷íQ~ÉÃ§üþ‚Ÿ¾_œÄðJ½†‰¼Ž”:_ÅËÏ××•*š>j[ÇFy­jŠ×8M1c7ÅW˜rÃÇÜ¸\Ñ¤d¾rå—N£üœÍðÆyúÙnÝÄw5n$ŸGeÂLR,]7ñžus‹sóûªþ 7ÛåýŸ%§;4æÄJ;$ÑÚPgCqZÔ•¤Åüo¤Q‘Šo¢Ó;N~)òyëx‹Þ¦öã‹wX®ïÒ7ïÑ/ï³L? ß	6ú:˜O.±ÙKÎÉ¶—&3ç-/¨¡ ÖóÃ™¯Âb½« ¬Ñ!¯(·8Ÿ©ZÂvâ‚ë(Îçî‚C¨r½m×¨)5›ðç2Dõ¤ÞªZÈmÿPK
-   5H‚G†š¨OM  Ì  %   com/mysql/jdbc/ConnectionImpl$1.class…S]OA=Ó¯e—UšA´biMLL‘HMšT©á}»`q»Sw·¦ýY>¨Ñã³ÿDýÆ;C-¥íCwnÏÜ{Î½gf~þýöÀžèÐðÈÀòÖ'Çš†‚A`QÃ††M†Ttê†¹m†åª#šV³¾÷¬³FÝ±„ïs'r…_i¶¼¥îº¾í1<ÍÉ­žÙl«¹žU‰x`G"(­1$Dƒ3LU]Ÿ¿n7ë<xk×=B2UáØÞ‘¸òLÈÖÀ`Vˆ>8ðì0ä„¬Ž–ÏíP³±Í4sS#Ù«jÝÖÅíòw¯‹•;÷CÒ*í—Qî8¼%¥C[Ú±Ê¶sÊ°4àÒE¥2ƒ«´…áY³ùóŽ<Û?±ÞÔÏhHU›„ôš{âÛQ; Iž]g=‡ï{Ây7n¤šhéJK¦¯z»%uéË¾ã‰ÐõO^ñèT44X&¶±cB‡ab6‡RÕ=æN×ñxÅ§®¤}"`˜Ö”‰,Òsè‹#f&/•er³vXíŸÓH^†¤œ”œˆç¥ósù›/7VèUMÐ«cé´4¢8ý&a"†[ÒªBñXaãbUÒmú¦è’#ùSg)Q¦1¨h³„e)6ežBæ™§8AÈZÉ¢žÐ>!’Á(þ@ü+R'¦t¹“ü=ùç’–Ñ×2pKTßgN¿ æ{=æç´Ê|½@ÔÉÏH] ÷Iujwù2)}WTå*î«õrjï!ÖQmÐCRµøPK
-   5H‚Gówù W  é  &   com/mysql/jdbc/ConnectionImpl$10.class…S[OAþ¦­,mWi€„¢¥\¶xKL‘›’4©‚ÁÄ·év€ÅíLÝÝú³|P£Æg”ñÌ€E.mvæì7ç|ß¹Ìüþóã'€M<IÂÂƒFQ°°’FE«)×,¬[Ø`‰Ž¼0_b˜¯»ªå´ºáGß9n6\§¢¤nä)Ykµý2¹nyÒ‹¶ž†øÖù'ît"Ïwj‘x¤‚òÊ>C¢¢š‚a¬îIñºÓjˆà-oø„Œ×•Ëý}xúÿLèÔÀ`×ˆ>¨ø<!‹ƒåó›%Ê6vBEM^—	Cî¢\·ýO²tÿÖeµêI$dHbåmâJUO\ÑÖÚ¡‡Á:PA•»GsWÚtiº!ŒÛL/†lá4#ŸËCçMã˜ª4±ãWa†äžw(yÔ	¨’g—YOË/}å~VÒžê®ØñtK&.6wCëÒ«ÒõUèÉÃW":RM%›.ÜCI¤l¤ñˆa½ï”êÞp»®/j’²ÒíSÌ0Ý/33˜eX6z†Ù•SGMãôáÞn½7;šÖ@bºJQÀeÈRQ‰H4â=Ž©B¿+Oçï±@/n”^$ËdtÈŠÓ—†n’µK»AŠ«_ÀŠkßûlœnÑ:B Ù%Œ‘#G˜Á`¬Id	Ë‘mk?ƒL2Mv‚Û´SãÎ„*„†Õ_ˆG‚áŠ¡”>Êæ‘Ê.÷»ƒ9"èQg^õÝ3êç´kÿd‘¸o|ÅÈ9ñÕ
-’=Ò$å;ÿ?)­&òÍ¾„¼9[Æ}Œ›4é‘™XüPK
-   5H‚GŒ'‚³ù  P  &   com/mysql/jdbc/ConnectionImpl$11.class…SÝkÓPÿÝõ#[šºÎ-ÝœÎÕÚi×Š±à›âK©PˆŠnö˜¦—5%¹wÞ&:ÿñŸê@Aßý£Äs¯AÈÈMî¹¿“sN~þúú@·`áªylÚ¸‚†…kš6J¸n¡eaËÂ†r:‰f­;›~(/y5{{Óñ(ôúR¦‘Ãä0¾GÐû‘ˆÒÍö9Øí=†b_Ž9Ã¢	þ8KF\í£˜"}ñ^ "½ÏƒEœ!I©~Ìfœ"Í³­Z½eVP™ µ­}©­úÓàEàiÎÎSpòCM ¤½#3ò‡‘6]>­u[“(ãc9‹ÄÁ#žNäØÂMml;°Qqà î ƒ:ƒû_†uqà=ËD%üï¡¦wç}CíŸÈ“Ñ”©p§tÅŸÂmœ)ÅP
-FR¥¦g†ž¥Qì…R„™R\¤Þàˆ‡Y*•éYÕ€‡"åJD^ËIÆsw¢äKmJP4h¶æ©[`µš.ÜÝª½@owi¯#v§û¬s‚¹cƒY¤µL¸¯Q3¦QXÂ
-tÿ]Ôs… £àv>}Aá#ªþ7”ö»'(ÿ864‹ˆÅ\´N“÷,÷=l÷-*î;¬¸ŒI0Jvk†çæv\2I­ã2=‹ô›l`Ù¤ÃHÛ\¿PK
-   5H‚G¦a  "  &   com/mysql/jdbc/ConnectionImpl$12.class…S[OAþ†Ö.”EÊeT¤U{Vðš`x!˜4)mCâãv;¡ÛÜà/ò™$‘ê£?Êxfh0„MvÎÌ™ï|ç›3g~ýþz`¯ûÆC5<RÃã4úQL#Re”T<I£sæØž2dö¿Ðñ|ß¹+E+d`U†~íþ~ô«’a¼æÊŽ­—öv«éÚkzgc‰!µ½°@DÓÿbV¤Ü<)ª]_AßxÂ‹––Š·`«ÿËWÚdH®Èg¬y‚¯Ç&NÓ'ÏpMºŽ¿éžZwI¥f•r+¾†œ<³7k(,,’äD‹*/#¶±Ú¶³çØ*¦þ®¶zàò]@Èt]ÆËßz*éÈU®yDŠW…ëËÐ[k<jË–‹xfbÃ&p×Ä 2&F0eâ9^xÉ`]›‘!§ý¾#¶ì÷±ˆ¼¿ÜT¯fn; Ýþ_’æ6mR¯ðŠ‹*NÝHÅ0òhGû2ØiQ¾xQ¬8ò|›ZËƒ€‹È^=ànÉ`©ªªš¡Èºtwxt˜,êìõ=@ÝØ%Öí@î+‘Ô˜êyºj$2UP€,ÕT[ª2½“úG0J(‹fË´N’-WŽÁÊ“Çè)Ï#Q>AòP£³4¦ëc47ÕœâÇqª­&1ÕåŠÐì…òQ¡çîI\LSŸ1P;Eï‡Ê	úÎ5K0º9r”Ö7ô[gÈZ?0a#g}GÞú©óf	—CîcZÇº
-tj¥ófÉ&é¹ª5%ô÷PK
-   5H‚G=D§m    %   com/mysql/jdbc/ConnectionImpl$2.class…S]SÓP=·­	)JùD@«–ò@E°È8vêLg*ƒÃoiz`š[“Ô¡Åá:úàøìrÜ{[Ëgá!ÙÍ¹»{vÏæþùûó€lèA6	s:r½ˆc^":“d—tX:–´èÈ3äL—Q³jÍð“gW+ŽU¾ÏÈ~©V÷òºéún´Å°–½%¶|l¶­FäzV)â‰ ?·Ç(ˆ*g(»>ßnÔ*<ø`W<BÒeáØÞž¸ò»&dk`0KT>(xvrBfo¦Ï¬R³±šiøºFF/²5ëÿ—¯‰ß¼LV<‰¸W~‹j%‹'¯KêPÇ
-ƒ~ ‚¢í1L]Qé,S‰ÁUØD÷(†‘l«#Ïö­÷•cRå¦¯ÂÆ®{èÛQ# I6.WmÃßxÂùxÛH»¢8ü­+%º¨í’ä¥}Ç¡ë¾ãÑ‘¨êX5ñÏL$ÑkÂÄs†Å®K*»Üi:/ùÔ•”O2}ÍÄ¬3ŒwkÏÄ$îÑ¯zËú&o˜žTUâÉÃÝrg´±ëÒ óš1Ä³r	cÙnÿ9ï3ô…‘¨·pŠíc†®žA÷“¥RR)òâô˜èCýäí•Honþ,·ð±¯*h€ÞÝhëH‘?J†AÊQØ˜*ÇÚÈ8!wÉO2A–Ôkm“•Òó¿ÿÃôä§¸#ùbŠ¯_¶¢mÀÔ^bPÛ<Ç›îð¦1…ûT½Ã’zM,Óm–Wm#G4Ú7ègÅ¯ctŠÔúÌù¢ôžU™ðPÙ©³Çx‚!ò’Õ£rñPK
-   5H‚GºuX20  É  %   com/mysql/jdbc/ConnectionImpl$3.classT[OAþ†ÞØvÊÕKAÄR.â•^JÑbA¥€MtÛN`Év·în	ü	|3>úà/&*ÑÃ‹1ñoø?Œg¦j‚4À>ìœ9s.ßùÎ™ùñëËW cXPÁ¥0T\Ò!] ×B¸® ˆ‰0ý’â7ÂTÓ!Ü`ˆºÜ1ts…;®a[Ë™6ÇÐ²-×Ó-oE7+<°±÷¦ñå·Ÿ¯‚Þºáö2œÍì’VÚv_˜ÚF1_ÐÈÃâ¢dJe3I¦“†exÓ½ñ#l3+þ”]äMYÃâ•Rž;KzÞ$MsÖ.BpÒþÒ/p0€AÍP,'eê®ËIÓsx®¾qBV·E°Ã	‡—ìMž6‹ÜõÒ–çl‡p‹! E†“ñì†¾©kÏ0µy½Ü'õÉU2¡øé-†Žª…È–{˜MoxY¤IÊ„æ@å9îlrçÃËºÃ‹9O÷x‰[ž ‹Km5“2ÔWÁfÈ„‚öý´l—ÿR“¬å?YUšºµ¦ÝÏo!ÉƒšiÊ¢äŒ5K÷*Eš®Yÿ1C	–Â9»âø¬!pµìïÄˆð¡~§­‚i»†µ6Ï½u»Âm)Ì¨hF‹ŠV¤UÌ¢KÅYœSqwúÇ©Š*æpOE4Øm5[E£|ÄÄ0Äþ³„d—Sza‡0OÅÕ Š¡óÐÈâÜá„ö t—ÆÇ—7#./H¤¤o¥MyNGõk¼z9Zã@†+ã©©.÷RÄ²ýñU- X'ç†}Àé½ˆÐÃÔá4ÐH÷«Iî¢Ñ¨hˆ”A]i£“v’nÐÞGk$1ø,ÛEÝ{iÔAÿ AYÄI’Û¥c§¤Ô‰.ÒùEciÁ¾Ó u<ñ>ÿ[|;‰Á]ø§b¯Ñ=ø†=†}ö}Býð'(ï˜ðÇv(UCÐ&<"ù¥ iF½²„°òQå1Z•Ut)OÐ«<E\y†!%MyŽ1…K—(ý­½è#`]TïyôËúÆÿÇÊD/'Y AI«ŠRåÙIÃ’‚òÔ¤4*£úq‘,ÎÔLºª_7n¢'¨üPK
-   5H‚GVjz‚Ô  À  %   com/mysql/jdbc/ConnectionImpl$4.class…TkSÓ@=[
-C-¢¢¼Ä´UZ´*Z±Ö™ŽUœñ[š,m˜4©I`à8ÃŒ:þQ||ð£üQŽwÓÚáYÚI²¹{Î¹çÞÝÍŸ¿?˜C¡}HÊ‘’q—{qEÆ,Ò24dÄm®WqMBVÂu	7z‚šåOg.”·ž®oùoìôšY1Òy×q¸X®S¬7ìAïXŽ,0LjÇ`+Ñ¼kr†’åðåõz…{/ôŠM‘xÉ5t{E÷,ñÞ
-F…0(E’òò¶îûœ"SMgÉXTøbÈv°•+­ézz=°ìôSÏmp/°¸ß4jŠál2ÕN U«Ê0|¸ƒ\Ø4xCÀ}	7$“ûçn1ti"MÜrî	HÈðHkÊ‰¤åg¥öL®ƒ™Ä†nŠ6FŽDÈew<<´DÏ÷¶rVhÁ
-Ža»¾åTó æšæÜÂ¸'¨bt¤ÉÌK¸£à.,âž‚%ä$ÜWÇÚOÇ¬C,tiëN5ý¤²FsSûHmïÅÿÍs=†¡CËcë˜’aÔð¸ð|¸”yÝ¨ñâê2ç&7ú«< µr@ †SZ«Ë¡»ràQ;r{7cÔQ?Ð½Àe52¦d%^H7îÓ1ËÐA[8öô˜V—L½A={‘¬¾|^¢-ÛGI-gC·-3,h³f·iócœ>2º~°XL,0}E¢t© hŒFYDèÈÉÔW°ä7D>Ó['éÞC¨ï§±"Æ¤5ˆaˆc<‚Ó„
-‹tu‰Ø~âÛ8ÞœlÅhgB1*çˆ1šbô=£]Eø¦±Tˆ8Dv{—Öö3ÉÑ!´H©¥vÐõ“âî {ÃÉ/`ßÑ#;~ 7ö©­¯
-žúƒêÌ¨wÙ×Úö5La:Ì­……ˆ\C…\
-ÑÀPØ+FÝÿ PK
-   5H‚GYp o    %   com/mysql/jdbc/ConnectionImpl$5.class…SÛRÓP]§­¤)ÚrD@«–¨ È82u¦3‡Áá·4=@0Í©IêÐ_ñ/|@GŸý%¯ûœÖr)…‡dï¬³÷Zû’óãÏ×o –°ª#Žl:f5äzE^"sæd4˜zÂC'È3U²EÕ¬6‚w®yT)Ûæ¦ð<n‡ŽðŠÕš»F¡ëŽç„+ÙkbKGÖ{Ë¬‡ŽkCî[¡ð×fwb›¢ÂJŽÇ·êÕ2÷ßXe—tIØ–»kùŽün1YŒ"Ñû›®œ™«å3ËTlä˜zº¬†‘ójÚÅÅKâ×/ŠŽCî¤µ¶A\‰Â±ÍkR:Ð°Ä í¿`Ù‡“S:ÍTÃà*l¼{Ãp¶Y‘kyæëò5©rÓ0ƒ¾ãxVX÷©“Õ‹¬ÍvøWØo¯kiGÔ}›¿täHÏÏvAêÒžíŠÀñ^ñðPT4<4ð$ÐkÀÀ2Ã|×%•œ}n7l—=ªJŽOø2}ÅÀ<eëVž	Ü¢_õšõ3L\Ñ=MUOîl—Úû£]ÉË÷…ë–-IÍÊ5Œf»ýét¾ÇÐ„¢ÖÄiTlÓtùtº¡,™”³"/J>DÐOÞ6Y‰ôæò'`¹¹Ïˆ|TAôî¡»€ÔO$É¡@
-C
-C€ò†6ªèX#ä&ù1BÆÉÒüZB[d%C:ÿÑ/ˆ1|@<;Á©Qzý²”Ô/©ßH¥þžÑM·uÓ˜Ämbo«$Ÿ“ÊTKåYKEÏ‘LÏ'h§äÍèmRJŸ>KJï•yw•Íàž:»$/AQq•‹PK
-   5H‚G‹»ž  ‚  %   com/mysql/jdbc/ConnectionImpl$6.class…T]SÓ@="¡%@PDD«–ð‘"_bqdêLª£8<ð–†‚i¶&)ÅáŒèèƒã³?ÊñnZ
-
-Ý»={ï=÷ž½›¿ÿ~ý0‡µ˜’ËtIÌh˜í†
-K"9sI²O5ÌkX`è9´½Lhòªpýˆa t`ÚVøÙ³6OÑ<Cg´ï†™ÃxÉ«r,vÊŽµ!|Ÿ;‘+üb¥êI×U×w£u†×Ù|ëTµÈõ¬bÄ;Aþ*úÉ-uCìp†¾’ëó·µJ™í²GˆQŽímÙ+ÿ7@U–Ë ½H”Á†g‡!'dâú’2KÔ€r”kêÐZCº•í¸zÊ˜»Âõ"Yá(â~H\ùuÊ•,9¼*©C‹Ú®
-¶³Ï0vI¹³ÈX»´÷bÌÖ+òlÏzW> &ãXã2ÌØt÷|;ªÔÉÊÅ¬õvøKO8ŸnjiSÔ‡¿r¥$ý­ÚÎJ^ºÁ‚ïx"tý½7<Ú;–t,ã™Žôêè†®£+3moªäîrçØñxÑ§Ò¤†"9žëÈc•a¸]:îaœfø†`½F’ölFß—š—H×vm^†®@x^Ù–)†²íýô¤uòÎŸ\ˆÙ¦GF¢Z÷%]Ø6îÓ#OÒç@I¥¤¦ Y˜úõ!·i·EV%›2§NÀÌ™(æôt|=Z;éÁ˜G?íÓäM¾Àï†q‡°ÚëÒ/FF	¹K{•1²$zƒíY™!=õªùÊOÜRð]¦z‚NÉ©Äœ½²Jc)cƒÆò9ît“;M=NC“)õ‚˜4˜ÖL	“¨´ïè:K~¹¡D3i‚Êx>)­™8òÇö	²ñÙ$LŠ‰LÏ'ŽÅPK
-   5H‚GE‡ì›  <  %   com/mysql/jdbc/ConnectionImpl$7.class…SÝRÓPþNˆ„– 5@A­ZÂOÁ?Ä"ƒvÊLgªŽâpÁ]%˜æÔ$eàU|gDG/¯}u|Ç=‡Zþá"g7{v÷Ûýöì¿_¿˜ÅB	LÈc2‰$¦LwBGNZfÌ&IÞ5pÏÀ}kÛñ3N#Q«yñ²ïTØC{¼éE™†Ñ²+j¹ÚnôÎÏm­WÜ\AwcO¥ZÝÏ“ë‚xñ"Ã\ößò–³íä±ççJ1X„ùµñU½ Ö9COÙø‹F­ÂÃ7NÅ'‹U®ã¯:¡'ÿ›F]ÖÆ ³DùÃ‚ïD'ËØùø™9ªVÛ¡¦úN«„!}m·þqæÿ…ã`Å˜aå)W²¸ãòº„Ž<`06DXtÜM†‘4D*2¸r:Û‹¡?»_‘ïÕÜËÊ5©b­“f†ÄŠWœ¸R'óÇ³î·ÃŸùÂ}{QK+¢º|Ù“”ôåvZâÒ‹ë‹ÈªÏy¼)Ö<41‡G&ºÐm¢¦‰Ì3L9©²·ÁÝ]×ç¥€J“ŠPæxl"“að¬M\Ã(=ØÞ Ãð9µŠAy¹òªÜ"íÜ¼]Ÿ¶6‰Æ˜UO{ {Ú[Ss&‡5‹úþÑ†ë´žIZd-•’t$‰;²´Ñ×ƒ4\&m•¤N2eOìÙ#{ÐìÉÏhû <-:ÛiA`ýD/éiò&_ôa PÚ ®mˆtSú)Ë0Y®’®“e„$ñÙD{MRfHO|‡n„ö—4¼G‡­ï¡]bj
-³[ViýBÊú~ëÏ!ìt;M=ŽB)µDH7šHOšH	› ŒOè8H~²¡D+i‚Ê¿y8)y·•¼ƒ¬º‡MÑ ’i3T,þPK
-   5H‚G_Y²ó  z  %   com/mysql/jdbc/ConnectionImpl$8.class…T]SÓ@="¡m€J¡ ˆˆV-á#à'P`;uìLÕÑ:<ð–†¥ÓlMRþŠÿÂÑÑÇg”ãÝPJ¡ºw{öÞ{î=w7ÿýú`	ë1Ä0+—¹8â˜×°€
-S"‹–âdkx¢á)CâÀr3¶Z®¨2•ö­Ët-¯j–Cßñª9†ÞpÏ	2‹S%[ÔÌÚQðÙ5÷w*¶™žÇíÐ^±Vw¥ëšã9áÃëì5¾'DÐqÍbÈ}+~®“|f‹AÍ‹Î0Xr<þ¶Q«pÿ£Uq¹,VØ–»eùŽüßUY,ô"úy×
-NÈôÕe–©|åºîVCú<ÛQý”q±‹ÿÚE²ÂaÈ½€¸r”+^8´y]Rž1h»Â/XöÃd‡ng‘‘<r¿Ü‹a$Û&ä»Ê>5ÅuÂ±²Sõ¬°áS'+³ž´Ã_ºÂþt]KeÑðmþÊ‘’¤Îk» yi‚ÏvE@s}ÃÃ=±£á¹ŽXÖÑ	è:±Â0é¤JÎ.·l—=*Mj(|™cUGkc—Õ¨ã¦è_s&®€¤”‡å÷¥ÖilWæ%uæOÙ¹ù´]ôÑl·›'OºFl3ô¡¨ŸxÄÀ¶q—wœ>J2)È’¼„ôÐoI(¸I»-²*Ù¤1{fÌC1æ~ çkä9Dk/½!¤V¢}š¼ÉÃ¢Ýn6N{]úEÈ!·i¯2I–$o²} +3¤gÿ@5¾Aù‰
-¾ ÏPÑ+9•ˆs@V™ZE2•ÃHj½;ÝâNSÓÄÐbJnÓ½&Óz“)f•ö}gÉ;Šµ’Æ¨üûíIiÍD‘ð0²Îf`P4Hdz<Q,þPK
-   5H‚GÄÅ~úS  ã  %   com/mysql/jdbc/ConnectionImpl$9.class…S]oA=ÈX-á«µµ¶UT
-m?“†Ú˜LHVMƒ©‰oË2…Åew?Ë5ú`|öGïL‘ÚRèÃÎÜ=sï9÷cæ÷Ÿ?<ÄÓ<ˆc[	„QTPŠ¸­`GÁ.C4èX~¾Ì°®›nOëü¶Öm5M­ê:7Ëuê½¾]!×}Ë±‚†g…+|õ®ñÉÐekõ€{Fàz•­c†HÕmq†EÝrøëA¯É½·FÓ&$¥»¦až%þÇ`D¤Æ µNô^Õ6|Ÿ²9_>¿GÉ††TSæ²DrçÕFýŠåKü÷/ŠÕ†w|ÒªW¼64y_Hû
-4åÄõj†ÙaX›êÒY¤l—n+³½²…ÓŒlÃikoš]*RÆ¦¦a†XÃj;F0ð¨’½‹¬§åðCÛ5?\URÃx&i‰–¤Ï÷vWèÒkŽi»¾å´_ñ ã¶”UºoTÄW‘Àc†™CÒ­nŽL›×ÊJ´ÏõDø†åY™©XÁ*ÝÒ+&Ï°:§pj¨ì›8lé“ÑÑ°æò2$Ïp|C"‡¼= pALb©0ë²Óù{lÐ[[ ·È’IÑ²Âô% "„ëdÑ.‘béXqûBŸ¥ÓZ£tõ‘Mc‘ì9ŠÀ$Ò€´2È–#[~Y"d™ì!7i§ž…ª„H†Ò/„¿#ÂðN…¤P\e3ˆg³3Äna&ÔÉD}{Lýœvá+÷µ¯ˆžOW›Æ(ßõÿIiÝ‘›¸#÷»ÈË³{¸”L“Þ—ŒÅ_PK
-   5H‚GûBO"¸  Ë  4   com/mysql/jdbc/ConnectionImpl$CompoundCacheKey.class•”[OQÇÿ§»tËv¡H¹¨ˆ¢‚ôÞ¥ÐLš¢˜@HômÛ®t›ínÙn5|¿Ÿ€c"%B‚úâ5Ÿý$Æ9Û›tfÎ\ÎùÍœÓ~ü¹»`s2ºëDq.’2DÄBHq=ÁÅ¤S<<-á
-_\•pA)ÚÕšmé–»hé½í±¦ššµª.¹Ža­¦ç,?±Be­^ÎÚ%Jg9†à¬an†a<Ö^Üî‰¯0ˆ­êÈ‚aé÷Õ‚î,kÓ;Þ.jæŠæ|í;E·lÔz²œ¢a•²Z±¬çõuËY–îdM­^×)cj@Õêz}ÍT+¥BQÍÚ/º†måª5sôøÔšTÓœVçžåõÔ×šIûõnh±P¡­Òñ‡”ªY¶[Ö†îG†SwïSå<¯¡PX°•£“ôk)‹ÓÄä%»áõ;ï.zr’W)ˆâº‚nDô Â0x|Œ·†YâPp7ÜÂŒ„´‚ã¢WÂ,ÃäÿÍCÁYœ£A÷¸éÚ‚Z­¦[%†‰¿Üt¼Íå3RÛ!×n¹úbí‰é#gþÎþ'<Fè)wÑóèKƒÿôøšú÷#Qô.’¬§´æž™ÄX"¹@"µ!±ñÁ:/x™«Mtô›ÈH5j¢sòsª`€ä :H¾¤ŸÕ.:±GçïÓ¼Â yGZ§à$†<–œ!*æYÃdÈ¦1ûTÏh-’Î'ß ¼ùäk„ï
-ŽñÑ”§$q¢ÙD„»¹¯	%3¼~N˜ò(•?mKØ:À¼€É÷ðžÉ'ÂüL‡~Á¾Ò¿Æ7äðÝCN‚‚9B¢Ên¤qžjyùƒ6ò¸ˆQ‚fü…ùðª·†7<ùÏ±AÏùÃÛZi%øÛpÉ“ã8MZ¦X—q
-¡_PK
-   5H‚Gt9\  l	  =   com/mysql/jdbc/ConnectionImpl$ExceptionInterceptorChain.classVMoE~&v²±½¤Ž“:ÔMiiSj{;Å…PÔM©Û%ýp |H{•läìšÝJ®EH ÁC+@B‰•Z9 ž8ð7z@ü	Ê;ãÍÚ±4 Ë3³ï¼Ï<óÌìþùÏo¿8B8€—Ãˆ¢Â^Äl¯â5n~=‚s(òæ|s¸À›7$\Œ ‚o.ñæ²UÂ›²aºº]Ñë®e;QuUûHË­»F-§Ž[`•eSs×m!Ó1=£V¬µÜÚ¦óa-·Z]ªäæ6\ÝtË,ÌRè€»b8SG;ýŠ–iê—Kkõw1LÃe8“|‚oBM3—se×6ÌåBj!X´ªð€j˜úüúÚ’nßÐ–jd‰©VE«-h¶ÁŸ=cc84·ÁWÎ3·X(®h†IÄ”¨ª]¬iŽ£“ëÙ½QMìš‰ÖkãØOë^CØOãH˜gˆhÕêušZÔm‹!ÙEM¯ª‚ŽH[I†“ûŠkê;0\N6‘òàò5ÕŸ)ìÎH!µK1oP†Ñ6!•È¢5ôSÄÜÃØîñªÂpxâñ{¾YßÞ÷©eŸ a©ª;®mm2’Bh\§{Ë´ÐVåªmÕuÛ5tGìK¸î?s˜=ýÈ«l­Ó6\08æ‘JËò—1†¼„+2®bšáxË/{N«öÚb	×d\GYÆ0bnÈ¸‰oám	ïÈXÄ»2ÞÃû'ö¡I¤d<¼Œ3xaúžºuZGáÊÒ*Å0ì) †#{!q‚‰Û‘¿›D2ÃPÍâÌxûKn·ÿû6vŸÛ–}Óî»vh§…4G 	%YR;)r4<sŸTï3ë¶’ªW4g^ßp…ªIÕ¦xÝNÒ^Çèµ]*è£×I‡Æ#4êÃh4Ê•Hã~úái²¢Ñ >‘V€¥A_ZQî#‰Ó¿¢ÿî‰øµCÂóBø˜b?ÁazŠ‹J	Œã( FÇð,ÙŽÓ8HÕOP?“^µó”ûËéû(H´ò‡ÅÜ§„þ³¶Ü²Ÿ[Æs8E9[¹W6µ<÷·”;H}žçþ“¼k`a~²Ã]$hfxˆˆB“¬9 uëñ#åg
-qAÏmHøœèû‚l_Ò[ü+'Mé‡iyi(‚ˆ¼,&	e‘#ØS.óüO“?ãçÏƒz‹z¾´Lê)ªªxPG•m¨<Å°õøï{ïÆ»”ÿk²}Cˆ¾ó)&ÇÈñd<Œ-<	‡Ñ®o[îxÔe›xRÝÔÅ[Ôe
-¢¿:}Oˆ~ 
-?’m‹øø©µqŸµ¬ÏZVpÅÄèELï`mÜc­µÕ}xIå,žR¡/ú :üPK
-   5H‚GÑ¸MVÙ®  ø| #   com/mysql/jdbc/ConnectionImpl.classì½w|Å0<[îvvveY’›\ÏÆØ²lËcÀ¦X–e[¶:ÉÆ6 Nw+éìÓ|Å–	5	$$$„$”B Sš[H¨	%$@€ÐC/ïóÌìîíY6É÷ûþx_û§¹é;óÌ3O›vÿ~u!diê¤Ú?: óÍÿ #ªÿ!<ÌÀy?2r¥ÿQtþ„ÎcšÿqF¦ùÿÌˆé'ÑyŠùÿâÿ+õ?ÍÈ8ÿ3Ìÿ¬ÿoŒLð?§ùŸ§þ4ÿß1þEêIó¿Ìü¯ø_Õü¯iþ×ñÿÀï½¡ùßÔüoé’Ïÿ6f}‡úßÅÀ{Ìÿ¾ÿF¦ú?dþú?Òüc™a™O˜Ôàÿ7Fªù?3üÿñÑaÊ¥šmÔd¦\¦)§¢ãCÇ¯iÓ¨¦3r¸ÿ	Œaèè @´tF S
-YDñ‘è”¡SŽN:£ÐÎtÆ¢3JtÆ£3‰èLBg2:SÐ	øNý\üÃÐTt¦¡s:ÓÑ9èÌD§
-YèT£39èÌE§yèÌGg:Ñ9EèŠÎbtCçptŽ Úü]ŠÎ‘è…ÎÑèÃ´eZ-Õ–c èÔkÚJª­ÒÉ;þ·5m5#§ 5 ³†jk™Ö¨51­YkaÒZ©v,þ¶1-¨µcž¦­ÓÖ£sS~¬m0´Ú&tŽGty
-ãN@çDªu^i
-ÕNÂßîÂASuU§bµt,¦uk=˜Ü‹¢³¶02FS˜Óú05Žq	túÑÙŠNRÓRø›Ö´þn£ÚvªPmj'SíKT;…j_¦ÚW¨v*ÕN×N‡I 8SÓÎÂŠ¿ÊÈnÿ€~Ú×4íëŒÜª1Ú9Lú—ö¬õ›T;°Tû–¦}[ÓÎcäwÚw4í»ø{>fÿ–=GÓ.`ä>í|Mû>ú:?Äú/Dç"^ŒÎ%ü:?ÆàOÐ÷Sô]j'µŸiÚeóst.Gç
-L»šv#ÏL p5Õ®1´kµë°e×Ú/´_¢s#ïh7¢ï&¬îfÌzúvÚ.m·¡íÑö¢ó+M»Õ oi¿Ö´ß`‘Û0p;N¬;tpîÄ"wãÿœjwSí·Xãï¨vþÞ«i¿gäSÿST»Ã÷c;îgÚÚðsb«brvæa&ù4¤CÚÑyh‚ö'L»™j1íqíÏT{‚jORjûÕþJµ§©öÕžÕ!ñoè<‡ÙžGÔyi×^Dç%ª½ŒÑ¯PíUª½Fµ×©öüÀ8joRí-¼Î;è¼Kµ÷°†÷©ö†?¤Ú?©ö¶é‘ö/t>¡Ú¿©ö)á3ÿÏÁ¡¾I‘$Q}
-úTJ}”ú)Õ(þÓ¡9Š”š”–P:‚ÒRJGRZF)RZ¡ÑQ@ñ´Û ‰t4:c°î±èŒC§ñÀ¤céDLBg2:HvhÀ S¨tf8éCFßtf¢ƒ´†ÎÒh5¢ån&Dg£3‘Z!¥s5ZÃ¤n:O£ó™ÔÉt$ƒ³?u¥‹`¦ÐC1°Ûyõñ–Né”.AïRJ¤ô(JÆÐ1”.ƒ®ÑZr/(Ð:JWPZOéJJWQºšÒJ×Pº–ÒF6QÚhF[ )i+Öp,¥mø¤´ÒJ×Qº^§ÇÑëXå&L?žúæRz¥'RÚ‰'¡¢´‹Ò0¥J-J»)í¡´—Ò(&n¦t£1Ú‡NœÑígt+MRšÂ@£ÛèvŒ@èbÜÉ<™Ò/iôJ¿Œ ù
-¥§Rz¥§SzÖ}&:g¡óUÿ¯-£_×èÙLºx®ÖHÏ¡ôþe‹ÿç?æáÁßDç\t¾…Î·Ñ9ï ó]tÎGàt‘®P¤+ô‡è\ˆÒŠt…^‚Î|âÊ«Œþ˜þD£?¥ôRFF/£ôç8ö—ô
-m·F¯Ôè^Å¤œ€ÔîEz5:×0éïôZJ¯£ôzJµþ’Ò(½è:½	Ã7Sz‹FwŸ§»0¼›Ò=”î¢J¥Ñ[1ê×èü›~£·Ó;°'w¢s:wkô·”þŽÒ{ mÚï0ï½èü«¼O£÷2¥hô”>HéC}˜ÒG4Š$„>ªQ$ þ'4ú“+èãø‘?cÊˆÔO¢3*Œ{ŠÒ¿èÚ2úWFŸ¦Ï0ú,ýF?‡ÎóØ”Ð÷wt^¤ô%J_Fï+}•Ò×Ð‹"EÒBß@L|˜}‹Ò·±ªwpÌß¥ô=L~S> ôCJÿ‰á€‹R$.…ú	:ÿÖè§L^J‘¼Ðÿ RŽN¨.Q]¦:Rv]Å(Óýº†A
-ÔU×Ñaèè˜è” ©»}:¥èŒD§‹•S½‚ê£¨>šêc¨Žâ>Î óôJdÏ2fÎMŸÈäãu”pt$5útLŸª£L£„ÁéèLõø;¤2ú,ôU£39è D£× oÕçãïª#aÑAgÕ‘°è‹Ñ9Œé‡ëGP}	Õ—RýHª£ £#IÑ¡ú2ü­Eg¹BÈçH‰õ:tV0½^_IõUTfšÞ€‘k¨¾ÑiB84S½…ê­TGFoC°1¾ê³õè‡Ît6R}Õ§ú	T?#:©~’¡‡ô.ª‡©~§[ß5õ ¯(Õ7cÚªÇ0Ü‡íB‘EG‘EïWP`Ôô­Lþ¥žDx£Ü¢§©ž
-®o3ôíú Õ‡ô“©þ%ªŸBõ/Sý+T?•ê§QýtªŸAõ3©~Õ¿Jõ¯QýëT?›êçPýTÿ&ÕÏ¥ú·¨þmrget name="-copy-binary-css-bypass" depends="-init-css-conversion" if="do.bypass.binary.css">
+        <exec executable="command" failifexecutionfails="false" failonerror="false" resultproperty="exec.which.javaws.result" outputproperty="exec.which.javaws.output">
+            <arg line="-v javaws"/>
+        </exec>
+        <condition property="do.set.webstart.in.unix">
+            <and>
+                <not><isset property="active.webstart.executable"/></not>
+                <isset property="exec.which.javaws.result"/>
+                <equals arg1="${exec.which.javaws.result}" arg2="0"/>
+                <isset property="exec.which.javaws.output"/>
+                <not><equals arg1="${exec.which.javaws.output}" arg2=""/></not>
+            </and>
+        </condition>
+        <echo message="do.set.webstart.in.unix = ${do.set.webstart.in.unix}" level="verbose"/>
+    </target>
+    <target name="-set-webstart-in-unix" depends="-set-webstart-in-envjdk,-check-webstart-in-unix" if="do.set.webstart.in.unix">
+        <property name="active.webstart.executable" value="${exec.which.javaws.output}"/>
+    </target>
+    <target name="-pre-check-jfx-webstart" depends="-set-webstart-in-unix">
+        <echo message="active.webstart.executable = ${active.webstart.executable}" level="verbose"/>
+    </target>
+
+    <target name="-check-jfx-webstart" depends="-pre-check-jfx-webstart">
+        <condition property="jfx-webstart-available">
+            <and>
+                <or>
+                    <isset property="do.set.webstart.in.fxrt"/>
+                    <isset property="do.set.webstart.in.fxsdk.jre"/>
+                    <isset property="do.set.webstart.in.fxsdk"/>
+                    <isset property="do.set.webstart.in.platform.home.jre"/>
+                    <isset property="do.set.webstart.in.platform.home"/>
+                    <isset property="do.set.webstart.in.jre"/>
+                    <isset property="do.set.webstart.in.probjdk"/>
+                    <isset property="do.set.webstart.in.envjdk"/>
+                    <isset property="do.set.webstart.in.unix"/>
+                </or>
+                <isset property="active.webstart.executable"/>
+            </and>
+        </condition>
+        <condition property="jfx-webstart-missing+jdk7u6">
+            <and>
+                <not><isset property="jfx-webstart-available"/></not>
+                <not><isset property="have-jdk-pre7u6"/></not>
+            </and>
+        </condition>
+        <condition property="jfx-webstart-missing+javafx.runtime.missing+default">
+            <and>
+                <not><isset property="jfx-webstart-available"/></not>
+                <isset property="have-jdk-pre7u6"/>
+                <isset property="javafx.runtime.missing+default"/>
+            </and>
+        </condition>
+        <condition property="jfx-webstart-missing+javafx.runtime.missing-default">
+            <and>
+                <not><isset property="jfx-webstart-available"/></not>
+                <isset property="have-jdk-pre7u6"/>
+                <isset property="javafx.runtime.missing-default"/>
+            </and>
+        </condition>
+        <fail message="Error:${line.separator}WebStart executable could not be found in active JDK.${line.separator}Please check that the JDK is correctly installed and its version is at least 7u6." if="jfx-webstart-missing+jdk7u6"/>
+        <fail message="Error:${line.separator}WebStart executable could not be found.${line.separator}JavaFX RT path undefined. Check the definition of ${platform.active} in Java Platform Manager${line.separator}(or directly the properties platform.active and javafx.runtime in project.properties file).${line.separator}Note: If missing, the default JavaFX-enabled platform gets created automatically when creating a new JavaFX Project." if="jfx-webstart-missing+javafx.runtime.missing+default"/>
+        <fail message="Error:${line.separator}WebStart executable could not be found.${line.separator}JavaFX RT path undefined. Check the definition of ${platform.active} in Java Platform Manager${line.separator}(or directly the properties platform.active and javafx.runtime in project.properties file)." if="jfx-webstart-missing+javafx.runtime.missing-default"/>
+        <fail message="Error:${line.separator}WebStart executable could not be found." unless="jfx-webstart-available"/>
+        <echo message="jfx-webstart-available = ${jfx-webstart-available}" level="verbose"/>
+    </target>
+
+    
+    <!-- Legacy targets kept for compatibility with older build-impl.xml scripts -->
+
+    <!-- Note: target "-check-javafx" is not necessary any more but is referenced from NB 7.1 build-impl.xml -->
+    <target name="-check-javafx"/>
+    <!-- Note: target "-javafx-check-error" is not necessary any more but is referenced from NB 7.1 build-impl.xml -->
+    <target name="-javafx-check-error"/>    
+    <!-- Note: target "-init-javafx" is not necessary any more but is referenced from NB 7.1 build-impl.xml -->
+    <target name="-init-javafx"/>
+
+    
+    <!-- Check project properties -->
+    
+    <target name="-check-default-run-config" unless="config">
+        <property name="config" value="&lt;default config&gt;"/>
+    </target>
+    
+    <target name="-check-project">
+        <condition property="main-class-available">
+            <isset property="javafx.main.class"/>
+        </condition>
+        <condition property="vmargs-available">
+            <and>
+                <isset property="run.jvmargs"/>
+                <not><equals arg1="${run.jvmargs}" arg2=""/></not>
+            </and>
+        </condition>
+        <condition property="preloader-available">
+            <and>
+                <isset property="javafx.preloader.enabled"/>
+                <equals arg1="${javafx.preloader.enabled}" arg2="true"/>
+                <isset property="javafx.preloader.class"/>
+                <not><equals arg1="${javafx.preloader.class}" arg2=""/></not>
+                <isset property="javafx.preloader.jar.filename"/>
+                <not><equals arg1="${javafx.preloader.jar.filename}" arg2=""/></not>
+            </and>
+        </condition>
+        <condition property="app-with-preloader">
+            <and>
+                <istrue value="${preloader-available}"/>
+                <istrue value="${main-class-available}"/>
+            </and>
+        </condition>
+        <condition property="app-with-external-preloader-jar">
+            <and>
+                <isset property="app-with-preloader"/>
+                <isset property="javafx.preloader.type"/>
+                <equals arg1="${javafx.preloader.type}" arg2="jar" trim="true"/>
+            </and>
+        </condition>
+        <condition property="app-without-preloader">
+            <and>
+                <not>
+                    <istrue value="${preloader-available}"/>
+                </not>
+                <istrue value="${main-class-available}"/>
+            </and>
+        </condition>
+        <condition property="preloader-app">
+            <and>
+                <isset property="javafx.preloader"/>
+                <equals arg1="${javafx.preloader}" arg2="true"/>
+            </and>
+        </condition>
+        <condition property="fx-in-swing-app">
+            <and>
+                <isset property="javafx.swing"/>
+                <equals arg1="${javafx.swing}" arg2="true"/>
+            </and>
+        </condition>
+        <condition property="fx-in-swing-workaround-app">
+            <and>
+                <istrue value="${fx-in-swing-app}"/>
+                <istrue value="${preloader-app}"/>
+            </and>
+        </condition>
+        <condition property="preloader-app-no-workaround">
+            <and>
+                <istrue value="${preloader-app}"/>
+                <not><istrue value="${fx-in-swing-app}"/></not>
+            </and>
+        </condition>
+        <condition property="html-template-available">
+            <and>
+                <isset property="javafx.run.htmltemplate"/>
+                <not>
+                    <equals arg1="${javafx.run.htmltemplate}" arg2=""/>
+                </not>
+            </and>
+        </condition>
+        <condition property="icon-available">
+            <and>
+                <isset property="javafx.deploy.icon"/>
+                <not>
+                    <equals arg1="${javafx.deploy.icon}" arg2=""/>
+                </not>
+            </and>
+        </condition>
+        <condition property="dimensions-available">
+            <and>
+                <isset property="javafx.run.width"/>
+                <isset property="javafx.run.height"/>
+                <not><equals arg1="${javafx.run.width}" arg2=""/></not>
+                <not><equals arg1="${javafx.run.height}" arg2=""/></not>
+            </and>
+        </condition>
+        <condition property="update-mode-background">
+            <and>
+                <isset property="javafx.deploy.backgroundupdate"/>
+                <equals arg1="${javafx.deploy.backgroundupdate}" arg2="true" trim="true"/>
+            </and>
+        </condition>
+        <condition property="offline-allowed">
+            <and>
+                <isset property="javafx.deploy.allowoffline"/>
+                <equals arg1="${javafx.deploy.allowoffline}" arg2="true" trim="true"/>
+            </and>
+        </condition>
+        <condition property="permissions-elevated">
+            <and>
+                <isset property="javafx.deploy.permissionselevated"/>
+                <equals arg1="${javafx.deploy.permissionselevated}" arg2="true" trim="true"/>
+            </and>
+        </condition>
+        <condition property="binary-encode-css">
+            <and>
+                <isset property="javafx.binarycss"/>
+                <equals arg1="${javafx.binarycss}" arg2="true" trim="true"/>
+            </and>
+        </condition>
+        <condition property="rebase-lib-jars">
+            <and>
+                <isset property="javafx.rebase.libs"/>
+                <equals arg1="${javafx.rebase.libs}" arg2="true" trim="true"/>
+            </and>
+        </condition>
+        <condition property="use-blob-signing">
+            <and>
+                <isset property="javafx.signing.blob"/>
+                <equals arg1="${javafx.signing.blob}" arg2="true" trim="true"/>
+            </and>
+        </condition>
+        <echo message="main-class-available = ${main-class-available}" level="verbose"/>
+        <echo message="vmargs-available = ${vmargs-available}" level="verbose"/>
+        <echo message="preloader-available = ${preloader-available}" level="verbose"/>
+        <echo message="app-with-preloader = ${app-with-preloader}" level="verbose"/>
+        <echo message="app-with-preloader-without-project = ${app-with-preloader-without-project}" level="verbose"/>
+        <echo message="app-without-preloader = ${app-without-preloader}" level="verbose"/>
+        <echo message="preloader-app = ${preloader-app}" level="verbose"/>
+        <echo message="fx-in-swing-app = ${fx-in-swing-app}" level="verbose"/>
+        <echo message="fx-in-swing-workaround-app = ${fx-in-swing-workaround-app}" level="verbose"/>
+        <echo message="preloader-app-no-workaround = ${preloader-app-no-workaround}" level="verbose"/>
+        <echo message="html-template-available = ${html-template-available}" level="verbose"/>
+        <echo message="icon-available = ${icon-available}" level="verbose"/>
+        <echo message="dimensions-available = ${dimensions-available}" level="verbose"/>
+        <echo message="update-mode-background = ${update-mode-background}" level="verbose"/>
+        <echo message="offline-allowed = ${offline-allowed}" level="verbose"/>
+        <echo message="permissions-elevated = ${permissions-elevated}" level="verbose"/>
+        <echo message="binary-encode-css = ${binary-encode-css}" level="verbose"/>
+        <echo message="rebase-lib-jars = ${rebase-lib-jars}" level="verbose"/>
+        <echo message="use-blob-signing = ${use-blob-signing}" level="verbose"/>
+    </target>
+
+    <target name="-swing-api-check" depends="-check-project,-check-jfx-deployment" if="fx-in-swing-app">
+        <condition property="fx-in-swing-app-workaround">
+            <and>
+                <isset property="fx-in-swing-app"/>
+                <not><isset property="have-fx-ant-api-1.2"/></not>
+            </and>
+        </condition>
+    </target>
+    <target name="-swing-api-warning" depends="-swing-api-check" if="fx-in-swing-app-workaround">
+        <echo message="Info: No support for FX-in-Swing deployment detected in current JavaFX SDK. Using workaround instead."/>
+    </target>
+
+    <target name="-icon-deployment-check" depends="-check-project,-check-jfx-deployment" if="icon-available">
+        <condition property="icon-deployment-may-not-be-supported">
+            <and>
+                <isset property="icon-available"/>
+                <not><isset property="have-fx-ant-api-1.1"/></not>
+            </and>
+        </condition>
+    </target>
+    <target name="-icon-warning" depends="-icon-deployment-check" if="icon-deployment-may-not-be-supported">
+        <echo message="Warning: Note that due to a bug in early JavaFX 2.0 SDK distributions the icon may not be properly set in deployment files."/>
+    </target>
+
+    <target name="-set-dimensions" depends="-check-project" if="dimensions-available">
+        <property name="javafx.width" value="${javafx.run.width}"/>
+        <property name="javafx.height" value="${javafx.run.height}"/>
+    </target>
+    <target name="-reset-dimensions" depends="-check-project" unless="dimensions-available">
+        <property name="javafx.width" value="800"/>
+        <property name="javafx.height" value="600"/>
+    </target>
+
+    <target name="-set-update-mode-background" depends="-check-project" if="update-mode-background">
+        <property name="update-mode" value="background"/>
+    </target>
+    <target name="-set-update-mode-eager" depends="-check-project" unless="update-mode-background">
+        <property name="update-mode" value="eager"/>
+    </target>
+
+    <target name="-set-permissions-elevated" depends="-check-project" if="permissions-elevated">
+        <property name="permissions.elevated" value="true"/>
+    </target>
+    <target name="-reset-permissions-elevated" depends="-check-project" unless="permissions-elevated">
+        <property name="permissions.elevated" value="false"/>
+    </target>
+
+    <target name="-set-binary-css" depends="-check-project,-init-css-conversion" if="do.copy.binary.css">
+        <property name="css-include-ext" value="bss"/>
+        <property name="css-exclude-ext" value="css"/>
+    </target>
+    <target name="-unset-binary-css" depends="-check-project,-init-css-conversion" unless="do.copy.binary.css">
+        <property name="css-include-ext" value="css"/>
+        <property name="css-exclude-ext" value="bss"/>
+    </target>
+    <target name="-copy-binary-css" depends="-init-css-conversion,-set-binary-css,-unset-binary-css,-copy-binary-css-bypass,-copy-binary-css-impl"/>
+    <target name="-init-css-conversion" depends="-check-project,-check-ant-jre-version">
+        <fileset id="cssfiles" dir="${basedir}${file.separator}${build.classes.dir}">
+            <include name="**${file.separator}*.css"/>
+        </fileset>
+        <pathconvert refid="cssfiles" property="cssfileset.notempty" setonempty="false"/>
+        <condition property="do.copy.binary.css">
+            <and>
+                <isset property="binary-encode-css"/>
+                <isset property="cssfileset.notempty"/>
+                <not><isset property="have-jdk7-css2bin-bug"/></not>
+            </and>
+        </condition>
+        <condition property="do.bypass.binary.css">
+            <and>
+                <isset property="binary-encode-css"/>
+                <isset property="cssfileset.notempty"/>
+                <isset property="have-jdk7-css2bin-bug"/>
+            </and>
+        </condition>
+        <echo message="do.copy.binary.css = ${do.copy.binary.css}" level="verbose"/>
+        <echo message="do.bypass.binary.css = ${do.bypass.binary.css}" level="verbose"/>
+    </target>
+    <target name="-copy-binary-css-bypass" depends="-init-css-conversion" if="do.bypass.binary.css">
         <echo message="Warning: Bypassing FX CSS to BSS conversion due to a bug in &lt;fx:csstobin&gt; task in current JDK platform" level="warning"/>
     </target>
     <target name="-copy-binary-css-impl" depends="-init-css-conversion" if="do.copy.binary.css">
@@ -3441,7 +3678,6 @@ m·F¯Ôè^Å¤œ€ÔîEz5:×0éïôZJ¯£ôzJµþ’Ò(½è:½	Ã7Sz‹FwŸ§»0¼›Ò=”î¢J¥Ñ[1ê×èü›
             <jvmarg line="${endorsed.classpath.cmd.line.arg}"/>
             <jvmarg line="${debug-args-line}"/>
             <jvmarg value="-Xrunjdwp:transport=${debug-transport},address=${jpda.address}"/>
-            <jvmarg value="-Dglass.disableGrab=true"/>
             <jvmarg value="-Dfile.encoding=${runtime.encoding}"/>
             <redirector errorencoding="${runtime.encoding}" inputencoding="${runtime.encoding}" outputencoding="${runtime.encoding}"/>
             <jvmarg line="${run.jvmargs}"/>
@@ -3580,7 +3816,7 @@ m·F¯Ôè^Å¤œ€ÔîEz5:×0éïôZJ¯£ôzJµþ’Ò(½è:½	Ã7Sz‹FwŸ§»0¼›Ò=”î¢J¥Ñ[1ê×èü›
     <target name="-debug-javaws-debuggee" depends="-init-debug-args">
         <echo message="Executing ${jfx.deployment.jnlp} in debug mode using ${active.webstart.executable}"/>
         <exec executable="${active.webstart.executable}">
-            <env key="JAVAWS_VM_ARGS" value="${debug-args-line} -Xrunjdwp:transport=${debug-transport},address=${jpda.address} -Dglass.disableGrab=true"/>
+            <env key="JAVAWS_VM_ARGS" value="${debug-args-line} -Xrunjdwp:transport=${debug-transport},address=${jpda.address}"/>
             <arg value="-wait"/>
             <arg file="${jfx.deployment.jnlp}"/>
         </exec>

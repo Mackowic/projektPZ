@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Czas generowania: 06 Kwi 2016, 21:10
+-- Czas generowania: 07 Kwi 2016, 03:26
 -- Wersja serwera: 5.6.24
 -- Wersja PHP: 5.6.8
 
@@ -61,6 +61,17 @@ INSERT INTO `projekty` (`idProjektu`, `idZadania`, `idUzytkownika`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `tokens`
+--
+
+CREATE TABLE IF NOT EXISTS `tokens` (
+  `idTokenu` int(10) unsigned NOT NULL,
+  `Token` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `uprawnienia`
 --
 
@@ -91,17 +102,16 @@ CREATE TABLE IF NOT EXISTS `uzytkownicy` (
   `Imie` varchar(45) DEFAULT NULL,
   `Mail` varchar(45) DEFAULT NULL,
   `Stanowisko` varchar(45) DEFAULT NULL,
-  `Telefon` int(10) unsigned DEFAULT NULL,
-  `Nick` varchar(20) DEFAULT NULL
+  `Telefon` int(10) unsigned DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Zrzut danych tabeli `uzytkownicy`
 --
 
-INSERT INTO `uzytkownicy` (`idUzytkownika`, `idHasla`, `Nazwisko`, `Imie`, `Mail`, `Stanowisko`, `Telefon`, `Nick`) VALUES
-(1, 1, 'Bartkowski', 'Artur', 'arturpro666@gmail.com', 'Programista', 667925375, 'Grunge'),
-(7, 2, 'Pardel', 'Przemek', 'Test', NULL, NULL, NULL);
+INSERT INTO `uzytkownicy` (`idUzytkownika`, `idHasla`, `Nazwisko`, `Imie`, `Mail`, `Stanowisko`, `Telefon`) VALUES
+(1, 1, 'Bartkowski', 'Artur', 'arturpro666@gmail.com', 'Programista', 667925375),
+(7, 2, 'Pardel', 'Przemek', 'Test', NULL, 666454666);
 
 -- --------------------------------------------------------
 
@@ -141,6 +151,12 @@ ALTER TABLE `projekty`
   ADD PRIMARY KEY (`idProjektu`), ADD KEY `Projekty_FKIndex1` (`idUzytkownika`), ADD KEY `Projekty_FKIndex2` (`idZadania`);
 
 --
+-- Indexes for table `tokens`
+--
+ALTER TABLE `tokens`
+  ADD PRIMARY KEY (`idTokenu`), ADD UNIQUE KEY `Token` (`Token`);
+
+--
 -- Indexes for table `uprawnienia`
 --
 ALTER TABLE `uprawnienia`
@@ -150,7 +166,7 @@ ALTER TABLE `uprawnienia`
 -- Indexes for table `uzytkownicy`
 --
 ALTER TABLE `uzytkownicy`
-  ADD PRIMARY KEY (`idUzytkownika`), ADD KEY `Uzytkownicy_FKIndex1` (`idHasla`);
+  ADD PRIMARY KEY (`idUzytkownika`), ADD UNIQUE KEY `Mail` (`Mail`), ADD KEY `Uzytkownicy_FKIndex1` (`idHasla`);
 
 --
 -- Indexes for table `zadania`
@@ -172,6 +188,11 @@ ALTER TABLE `hasla`
 --
 ALTER TABLE `projekty`
   MODIFY `idProjektu` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT dla tabeli `tokens`
+--
+ALTER TABLE `tokens`
+  MODIFY `idTokenu` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT dla tabeli `uprawnienia`
 --

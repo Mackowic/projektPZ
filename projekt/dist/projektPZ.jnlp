@@ -7,15 +7,19 @@
     <offline-allowed/>
   </information>
   <resources>
+    <jfx:javafx-runtime version="2.2+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
+  </resources>
+  <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="lib\mysql-connector-java-5.1.38-bin.jar" size="1023205" download="eager" />
-    <jar href="projektPZ.jar" size="28026" download="eager" />
+    <jar href="lib/javax.mail.jar" size="639960" download="eager" />
+    <jar href="lib/mysql-connector-java-5.1.38-bin.jar" size="1023199" download="eager" />
+    <jar href="projektPZ.jar" size="43290" download="eager" />
   </resources>
 <security>
   <all-permissions/>
 </security>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="projektPZ" >
-    <param name="requiredFXVersion" value="8.0+"/>
+    <param name="requiredFXVersion" value="2.2+"/>
   </applet-desc>
   <jfx:javafx-desc  width="800" height="600" main-class="projekt.Projekt"  name="projektPZ" />
   <update check="always"/>

@@ -56,7 +56,7 @@ public class loginController  implements Initializable {
     private Hyperlink zapomnialem_hasla;
     
     public  String login, haslo,login2,haslo2;
-    public static String ble,ble2;
+    public static String ble,ble2,id;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -84,7 +84,7 @@ ResultSet result = statment.executeQuery();
 if(result.next()){
 System.out.println(result.getString(1)+" "+result.getInt(2)); // do testowania
 }
-
+id = result.getString(2);
 statment = con.prepareStatement("select Haslo from hasla where idHasla = '"+result.getInt(2)+"'");
 result = statment.executeQuery();  
 

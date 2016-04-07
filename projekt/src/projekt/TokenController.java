@@ -68,7 +68,10 @@ public class TokenController implements Initializable {
  b_ok.setOnAction(new EventHandler<ActionEvent>() {
     @Override
     public void handle(ActionEvent actionEvent) {
-         
+       
+        
+        
+        
         try {
             
             Parent login_parent = FXMLLoader.load(getClass().getResource("login.fxml"));
