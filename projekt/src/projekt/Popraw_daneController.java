@@ -89,6 +89,7 @@ f_telefon.setText(result.getString(4));// do testowania
          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
          PreparedStatement statment = con.prepareStatement("UPDATE uzytkownicy SET imie='"+f_imie.getText()+"', nazwisko='"+f_nazwisko.getText()+"', mail='"+f_login.getText()+"' ,telefon='"+f_telefon.getText()+"' WHERE  idHasla='"+login.id+"'");
          statment.executeUpdate();
+         login.ble = f_login.getText();
          try {
              
              Parent moje_dane_parent = FXMLLoader.load(getClass().getResource("moje_dane.fxml"));
