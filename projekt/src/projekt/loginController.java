@@ -8,8 +8,6 @@ package projekt;
 
 import java.io.IOException;
 import java.net.URL;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -31,7 +29,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import java.sql.*;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Hyperlink;
 
 /**
@@ -67,7 +65,7 @@ public class loginController  implements Initializable {
         button_zaloguj.setOnAction(new EventHandler<ActionEvent>() {
     @Override
     public void handle(ActionEvent actionEvent) {
-        
+if(walidacjaPola()){        
 try { 
          login2=textfield_login.getText();
          haslo2=pwfield_haslo.getText();
@@ -114,15 +112,60 @@ hashowanie hash = new hashowanie();
   
          
    } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Moje_daneController.class.getName()).log(Level.SEVERE, null, ex);
-      } catch (SQLException ex) {
-            Logger.getLogger(Moje_daneController.class.getName()).log(Level.SEVERE, null, ex);} 
-                catch (IOException ex) {
-                Logger.getLogger(loginController.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println("Błąd odczytu classy");
+
+     } //Artur
+       catch  (SQLException ex) {
+       System.out.println(ex.getMessage());
+     
+       if(ex.getCause() instanceof Exception){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd połączenia z bazą danych");
+                alert.showAndWait();
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błęde dane");
+                alert.showAndWait();
+     }  
+        
+ 
+       }
+
+
+       
+          
+     catch (IOException ex) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błędne dane");
+                alert.showAndWait();
             }
 }
-        
+    }
+     //Artur
+               private boolean walidacjaPola(){
+                   if(textfield_login.getText().isEmpty() | pwfield_haslo.getText().isEmpty()){
+                           
        
+            
+        
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Puste pole");
+                alert.setHeaderText(null);
+                alert.setContentText("Wpisz dane do pola login i hasło");
+                alert.showAndWait();
+                
+                return false;
+            }
+                  return true;
+               }
+               
+               
         
       
 });

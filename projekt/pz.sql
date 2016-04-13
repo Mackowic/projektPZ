@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Czas generowania: 07 Kwi 2016, 03:26
+-- Czas generowania: 13 Kwi 2016, 21:06
 -- Wersja serwera: 5.6.24
 -- Wersja PHP: 5.6.8
 
@@ -29,15 +29,16 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `hasla` (
   `idHasla` int(10) unsigned NOT NULL,
   `Haslo` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Zrzut danych tabeli `hasla`
 --
 
 INSERT INTO `hasla` (`idHasla`, `Haslo`) VALUES
-(1, '1'),
-(2, '098f6bcd4621d373cade4e832627b4f6');
+(1, '098f6bcd4621d373cade4e832627b4f6\r\n'),
+(2, '098f6bcd4621d373cade4e832627b4f6'),
+(3, 'fa5eb0623cbcb13964d33d6e343da586');
 
 -- --------------------------------------------------------
 
@@ -67,7 +68,7 @@ INSERT INTO `projekty` (`idProjektu`, `idZadania`, `idUzytkownika`) VALUES
 CREATE TABLE IF NOT EXISTS `tokens` (
   `idTokenu` int(10) unsigned NOT NULL,
   `Token` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -103,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `uzytkownicy` (
   `Mail` varchar(45) DEFAULT NULL,
   `Stanowisko` varchar(45) DEFAULT NULL,
   `Telefon` int(10) unsigned DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Zrzut danych tabeli `uzytkownicy`
@@ -111,7 +112,8 @@ CREATE TABLE IF NOT EXISTS `uzytkownicy` (
 
 INSERT INTO `uzytkownicy` (`idUzytkownika`, `idHasla`, `Nazwisko`, `Imie`, `Mail`, `Stanowisko`, `Telefon`) VALUES
 (1, 1, 'Bartkowski', 'Artur', 'arturpro666@gmail.com', 'Programista', 667925375),
-(7, 2, 'Pardel', 'Przemek', 'Test', NULL, 666454666);
+(7, 2, 'Pardel', 'Przemek', 'Test', NULL, 666454666),
+(8, 3, NULL, NULL, 'kot@kot.pl', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -182,7 +184,7 @@ ALTER TABLE `zadania`
 -- AUTO_INCREMENT dla tabeli `hasla`
 --
 ALTER TABLE `hasla`
-  MODIFY `idHasla` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `idHasla` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT dla tabeli `projekty`
 --
@@ -192,7 +194,7 @@ ALTER TABLE `projekty`
 -- AUTO_INCREMENT dla tabeli `tokens`
 --
 ALTER TABLE `tokens`
-  MODIFY `idTokenu` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `idTokenu` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT dla tabeli `uprawnienia`
 --
@@ -202,7 +204,7 @@ ALTER TABLE `uprawnienia`
 -- AUTO_INCREMENT dla tabeli `uzytkownicy`
 --
 ALTER TABLE `uzytkownicy`
-  MODIFY `idUzytkownika` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `idUzytkownika` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT dla tabeli `zadania`
 --

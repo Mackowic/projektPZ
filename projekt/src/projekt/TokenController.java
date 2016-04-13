@@ -11,6 +11,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -19,6 +21,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -71,7 +75,7 @@ public class TokenController implements Initializable {
        
         
         
-        
+        if(walidacjaPola() & walidacjaHasło() & walidacjaKlucz()){
         try {
             
             Parent login_parent = FXMLLoader.load(getClass().getResource("login.fxml"));
@@ -83,8 +87,62 @@ public class TokenController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
  
     }
+    }
+    //Artur
+               private boolean walidacjaPola(){
+                   if(f_klucz.getText().isEmpty() | f_nowe_haslo.getText().isEmpty()  |
+                            f_powtorz_haslo.getText().isEmpty()){
+                
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Wpisz brakujące pola");
+                alert.showAndWait();
+                
+                return false;
+            }
+                  return true;
+               }
+               //Artur
+               private boolean walidacjaHasło(){
+                   
+                   if(f_nowe_haslo.getText().equals(f_powtorz_haslo.getText())){
+                       
+                    return true;
+            
+                   }else{
+               
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Hasła nie są takie same");
+                alert.showAndWait();
+                    
+                return false;
+                   }
+               }
+               //Artur
+               private boolean walidacjaKlucz(){
+        Pattern p = Pattern.compile("[0-9]+");
+        Matcher m = p.matcher(f_klucz.getText());
+        if(m.find() && m.group().equals(f_klucz.getText())){
+            return true;
+            
+        }else{
+                Alert alert = new Alert(AlertType.WARNING);
+                alert.setTitle("Nie poprawny klucz");
+                alert.setHeaderText(null);
+                alert.setContentText("Wprowadź poprawny klucz");
+                alert.showAndWait();
+                
+                return false;
+            }
+          
+          
+      }
 });         
          
     }    

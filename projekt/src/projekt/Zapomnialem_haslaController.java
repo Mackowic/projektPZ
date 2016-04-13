@@ -7,6 +7,7 @@
 package projekt;
 
 import java.io.IOException;
+import java.net.ConnectException;
 import javax.mail.PasswordAuthentication;
 import java.net.URL;
 import java.util.Properties;
@@ -14,6 +15,8 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -22,6 +25,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -31,6 +35,7 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -76,7 +81,8 @@ b_przeslij_nowe_haslo.setOnAction(new EventHandler<ActionEvent>() {
     public void handle(ActionEvent actionEvent) {
        final String email = "zapomniane_haslo@poczta.fm";
        final String pass = "lampalampanos123!"; 
-        try {
+       if(walidacjaEmail()){ 
+       try {
             
             Properties props = new Properties();
 		props.put("mail.smtp.host", "smtp.poczta.fm");
@@ -92,7 +98,11 @@ b_przeslij_nowe_haslo.setOnAction(new EventHandler<ActionEvent>() {
                             
                             return new PasswordAuthentication(email,pass);
                         }
-                    });
+                        
+                    
+           
+          
+          });
 
 		try {
 
@@ -107,7 +117,7 @@ Random generator = new Random();
 			message.setRecipients(Message.RecipientType.TO,
 					InternetAddress.parse(f_podaj_email.getText()));
 			message.setSubject("Zmiana hasła");
-			message.setText("Twoj kod do zmiany hasła to"+kod);
+			message.setText("Twoj kod do zmiany hasła to-"+kod);
 
 			Transport.send(message);
 
@@ -124,14 +134,59 @@ Random generator = new Random();
             Stage token_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             token_stage.setScene(token_scene);
             token_stage.show();
-            
+           //Artur 
         } catch (IOException ex) {
             Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
         }
+       catch(RuntimeException ex){
+     System.out.println(ex.getMessage());
+     if(ex.getCause() instanceof ConnectException){
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Brak połączenia z internetem");
+                alert.showAndWait();
+     }  
+        
  
+       }
+    } 
     }
-});       
+     //Artur
+               private boolean walidacjaEmail(){
+        Pattern p = Pattern.compile("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-­Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z­]{2,})$");
+        Matcher m = p.matcher(f_podaj_email.getText());
+        if(m.find() && m.group().equals(f_podaj_email.getText())){
+            return true;
+            
+        }else{
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Nie poprawny e-mail");
+                alert.setHeaderText(null);
+                alert.setContentText("Wprowadź poprawny e-mail");
+                alert.showAndWait();
+                
+                return false;
+            }
+          
+               }
+               
+});            
         
     }    
     
 }
+
+
+               
+          
+      
+
+        
+
+
+        
+    
+
+    
