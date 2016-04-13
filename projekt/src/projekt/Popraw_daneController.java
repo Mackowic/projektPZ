@@ -16,6 +16,8 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -24,6 +26,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -81,7 +85,7 @@ f_telefon.setText(result.getString(4));// do testowania
     @Override
     public void handle(ActionEvent actionEvent) {
         
-        
+     if(walidacjaEmail() & walidacjaImie() & walidacjaNazwisko() & walidacjaPola() & walidacjaTelefon()){  
      try {
          
          loginController login = new loginController();
@@ -109,6 +113,106 @@ f_telefon.setText(result.getString(4));// do testowania
         }
  
     }
+    }
+         //Artur
+               private boolean walidacjaPola(){
+                   if(f_imie.getText().isEmpty() | f_nazwisko.getText().isEmpty()  |
+                            f_login.getText().isEmpty() | f_telefon.getText().isEmpty() ){
+                           
+       
+            
+        
+                Alert alert = new Alert(AlertType.WARNING);
+                alert.setTitle("Puste pole");
+                alert.setHeaderText(null);
+                alert.setContentText("Wpisz dane do pola");
+                alert.showAndWait();
+                
+                return false;
+            }
+                  return true;
+               }
+               //Artur
+               private boolean walidacjaEmail(){
+        Pattern p = Pattern.compile("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-­Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z­]{2,})$");
+        Matcher m = p.matcher(f_login.getText());
+        if(m.find() && m.group().equals(f_login.getText())){
+            return true;
+            
+        }else{
+                Alert alert = new Alert(AlertType.WARNING);
+                alert.setTitle("Nie poprawny e-mail");
+                alert.setHeaderText(null);
+                alert.setContentText("Wprowadź poprawny e-mail");
+                alert.showAndWait();
+                
+                return false;
+            }
+          
+          
+      }
+            //Artur
+               private boolean walidacjaImie(){
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(f_imie.getText());
+        if(m.find() && m.group().equals(f_imie.getText())){
+            return true;
+            
+        }else{
+                Alert alert = new Alert(AlertType.WARNING);
+                alert.setTitle("Nie poprawne imię");
+                alert.setHeaderText(null);
+                alert.setContentText("Wprowadź poprawne imię bez znaków specjalnych i liter !@#$%^&*(){}[]?/<>: itp.");
+                alert.showAndWait();
+                
+                return false;
+            }
+          
+          
+      }    
+       //Artur
+               private boolean walidacjaNazwisko(){
+        Pattern p = Pattern.compile("[a-zA-Z]+");
+        Matcher m = p.matcher(f_nazwisko.getText());
+        if(m.find() && m.group().equals(f_nazwisko.getText())){
+            return true;
+            
+        }else{
+                Alert alert = new Alert(AlertType.WARNING);
+                alert.setTitle("Nie poprawne Nazwisko");
+                alert.setHeaderText(null);
+                alert.setContentText("Wprowadź poprawne Nazwisko bez znaków specjalnych i liter !@#$%^&*(){}[]?/<>: itp.");
+                alert.showAndWait();
+                
+                return false;
+            }
+          
+          
+      }
+               //Artur
+               private boolean walidacjaTelefon(){
+        Pattern p = Pattern.compile("[0-9]+");
+        Matcher m = p.matcher(f_telefon.getText());
+        if(m.find() && m.group().equals(f_telefon.getText())){
+            return true;
+            
+        }else{
+                Alert alert = new Alert(AlertType.WARNING);
+                alert.setTitle("Nie poprawny nr.telefonu");
+                alert.setHeaderText(null);
+                alert.setContentText("Wprowadź poprawny nr.telefonu");
+                alert.showAndWait();
+                
+                return false;
+            }
+          
+          
+      }
+               
+              
+          
+          
+                
 });
           
    b_anuluj.setOnAction(new EventHandler<ActionEvent>() {
