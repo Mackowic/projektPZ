@@ -10,6 +10,11 @@ import java.io.IOException;
 import java.net.ConnectException;
 import javax.mail.PasswordAuthentication;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Properties;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -35,7 +40,6 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -50,6 +54,7 @@ public class Zapomnialem_haslaController implements Initializable {
     @FXML
     private Button b_przeslij_nowe_haslo;
 
+    public int kod;
     /**
      * Initializes the controller class.
      */
@@ -106,10 +111,19 @@ b_przeslij_nowe_haslo.setOnAction(new EventHandler<ActionEvent>() {
 
 		try {
 
-int kod;
+
 Random generator = new Random();
 
    kod=generator.nextInt();
+   
+   Class.forName("com.mysql.jdbc.Driver");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
+PreparedStatement statment = con.prepareStatement("insert into tokens (Token) VALUES ('"+kod+"') ");
+ResultSet result = statment.executeQuery(); 
+
+if(result.next()){
+
+}
 
                     
 			Message message = new MimeMessage(session);
@@ -125,7 +139,11 @@ Random generator = new Random();
 
 		} catch (MessagingException e) {
 			throw new RuntimeException(e);
-		}
+		} catch (ClassNotFoundException ex) {
+               Logger.getLogger(Zapomnialem_haslaController.class.getName()).log(Level.SEVERE, null, ex);
+           } catch (SQLException ex) {
+               Logger.getLogger(Zapomnialem_haslaController.class.getName()).log(Level.SEVERE, null, ex);
+           }
 
             
             

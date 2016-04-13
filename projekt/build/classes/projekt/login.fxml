@@ -12,7 +12,7 @@
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <TextField fx:id="textfield_login" layoutX="109.0" layoutY="121.0" prefHeight="22.0" prefWidth="167.0" promptText="Login" />
+      <TextField fx:id="textfield_login" layoutX="109.0" layoutY="121.0" prefHeight="22.0" prefWidth="167.0" promptText="E-mail" />
       <PasswordField fx:id="pwfield_haslo" layoutX="109.0" layoutY="178.0" prefHeight="22.0" prefWidth="167.0" promptText="Hasło" />
       <Button fx:id="button_zaloguj" layoutX="109.0" layoutY="231.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="Zaloguj">
          <font>

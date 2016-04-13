@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.Moje_daneController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="576.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.Moje_daneController">
    <children>
       <Label layoutX="38.0" layoutY="25.0" text="Moje dane..">
          <font>
@@ -30,7 +30,7 @@
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="80.0" layoutY="168.0" text="Login:">
+      <Label layoutX="80.0" layoutY="168.0" text="Adres e-mail:">
          <font>
             <Font size="16.0" />
          </font>
@@ -48,35 +48,26 @@
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="80.0" layoutY="236.0" text="Adres e-mail:">
+      <Label layoutX="80.0" layoutY="236.0" text="Telefon:">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="l_email" layoutX="242.0" layoutY="236.0" prefHeight="20.0" prefWidth="167.0">
+      <Label fx:id="l_telefon" layoutX="242.0" layoutY="236.0" prefHeight="20.0" prefWidth="167.0">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="79.0" layoutY="269.0" text="Telefon:">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="l_telefon" layoutX="242.0" layoutY="269.0" prefHeight="20.0" prefWidth="167.0">
-         <font>
-            <Font size="16.0" />
-         </font></Label>
-      <Button fx:id="b_zmien_haslo" layoutX="67.0" layoutY="325.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="112.0" text="Zmień hasło" textAlignment="CENTER">
+      <Button fx:id="b_zmien_haslo" layoutX="61.0" layoutY="289.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="112.0" text="Zmień hasło" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="b_popraw_dane" layoutX="242.0" layoutY="325.0" mnemonicParsing="false" text="Popraw dane">
+      <Button fx:id="b_popraw_dane" layoutX="235.0" layoutY="289.0" mnemonicParsing="false" text="Popraw dane">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="b_wstecz" layoutX="411.0" layoutY="325.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="112.0" text="Wstecz">
+      <Button fx:id="b_wstecz" layoutX="403.0" layoutY="289.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="112.0" text="Wstecz">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

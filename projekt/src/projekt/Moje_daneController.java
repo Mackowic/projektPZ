@@ -39,8 +39,6 @@ public class Moje_daneController implements Initializable {
     @FXML
     private Label l_haslo;
     @FXML
-    private Label l_email;
-    @FXML
     private Label l_telefon;
     @FXML
     private Button b_zmien_haslo;
@@ -70,7 +68,7 @@ l_nazwisko.setText(result.getString(2));
 l_login.setText(result.getString(3));
 l_telefon.setText(result.getString(4));// do testowania
 }
-  
+l_haslo.setText(gwiazdkowanie());
          
    } catch (ClassNotFoundException ex) {
             Logger.getLogger(Moje_daneController.class.getName()).log(Level.SEVERE, null, ex);
@@ -137,4 +135,14 @@ l_telefon.setText(result.getString(4));// do testowania
 });  
   
         
-}}
+}
+
+    private String gwiazdkowanie() {
+        loginController login = new loginController();
+        int liczba = login.ble2.length();
+        String haslo="";
+        for(int i = 0; i < liczba; i++){
+            haslo+="*";}
+        return haslo;
+    }
+}

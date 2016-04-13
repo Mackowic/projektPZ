@@ -8,6 +8,11 @@ package projekt;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -76,6 +81,29 @@ public class TokenController implements Initializable {
         
         
         if(walidacjaPola() & walidacjaHasło() & walidacjaKlucz()){
+         
+            Zapomnialem_haslaController token = new Zapomnialem_haslaController();
+         
+            if(Integer.toString(token.kod) == f_klucz.getText()){
+   
+try {
+         
+         loginController login = new loginController();
+         Class.forName("com.mysql.jdbc.Driver");
+         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
+         PreparedStatement statment = con.prepareStatement("UPDATE uzytkownicy SET haslo='"+f_nowe_haslo.getText()+"' WHERE  idHasla='"+login.id+"'");
+         statment.executeUpdate();
+         
+         statment = con.prepareStatement("delete from tokens where Token='"+f_klucz.getText()+"'");
+         statment.executeUpdate();
+         
+     } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Popraw_daneController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Popraw_daneController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+            
         try {
             
             Parent login_parent = FXMLLoader.load(getClass().getResource("login.fxml"));
@@ -90,7 +118,7 @@ public class TokenController implements Initializable {
         
  
     }
-    }
+    }}
     //Artur
                private boolean walidacjaPola(){
                    if(f_klucz.getText().isEmpty() | f_nowe_haslo.getText().isEmpty()  |
