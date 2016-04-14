@@ -87,11 +87,18 @@ public class TokenController implements Initializable {
             if(Integer.toString(token.kod) == f_klucz.getText()){
    
 try {
-         
-         loginController login = new loginController();
+         hashowanie hash = new hashowanie();
+       
+         Zapomnialem_haslaController mail = new Zapomnialem_haslaController();
          Class.forName("com.mysql.jdbc.Driver");
          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
-         PreparedStatement statment = con.prepareStatement("UPDATE uzytkownicy SET haslo='"+f_nowe_haslo.getText()+"' WHERE  idHasla='"+login.id+"'");
+         PreparedStatement statment = con.prepareStatement("select idHasla from uzytkownicy where Mail='"+mail.mail+"'");
+ResultSet result = statment.executeQuery(); 
+
+if(result.next()){
+System.out.println(result.getInt(1)); // do testowania
+}
+          statment = con.prepareStatement("UPDATE hasla SET Haslo='"+hash.crypt(f_nowe_haslo.getText())+"' WHERE  idHasla='"+result.getInt(1)+"'");
          statment.executeUpdate();
          
          statment = con.prepareStatement("delete from tokens where Token='"+f_klucz.getText()+"'");

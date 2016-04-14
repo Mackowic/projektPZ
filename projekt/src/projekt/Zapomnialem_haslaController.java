@@ -136,28 +136,45 @@ if(result.next()){
 			Transport.send(message);
 
 			System.out.println("Done");
+                        
+                        
+                        
+                        Parent token_parent = FXMLLoader.load(getClass().getResource("token.fxml"));
+            Scene token_scene = new Scene(token_parent);
+            Stage token_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            token_stage.setScene(token_scene);
+            token_stage.show();
 
 		} catch (MessagingException e) {
 			throw new RuntimeException(e);
 		} catch (ClassNotFoundException ex) {
                Logger.getLogger(Zapomnialem_haslaController.class.getName()).log(Level.SEVERE, null, ex);
            } catch (SQLException ex) {
-               Logger.getLogger(Zapomnialem_haslaController.class.getName()).log(Level.SEVERE, null, ex);
+               if(ex.getCause() instanceof Exception){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd połączenia z bazą danych");
+                alert.showAndWait();
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Brak połaczenia z internetem");
+                alert.showAndWait();
+     }  
+        
            }
 
             
             
-            Parent token_parent = FXMLLoader.load(getClass().getResource("token.fxml"));
-            Scene token_scene = new Scene(token_parent);
-            Stage token_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            token_stage.setScene(token_scene);
-            token_stage.show();
+            
            //Artur 
         } catch (IOException ex) {
             Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
         }
        catch(RuntimeException ex){
-     System.out.println(ex.getMessage());
+     
      if(ex.getCause() instanceof ConnectException){
      }else{ 
                 Alert alert = new Alert(Alert.AlertType.WARNING);
