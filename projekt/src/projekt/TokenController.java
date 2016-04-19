@@ -84,7 +84,7 @@ public class TokenController implements Initializable {
          
             Zapomnialem_haslaController token = new Zapomnialem_haslaController();
          
-            if(Integer.toString(token.kod) == f_klucz.getText()){
+            if(Integer.toString(token.kod).equals(f_klucz.getText())){
    
 try {
          hashowanie hash = new hashowanie();

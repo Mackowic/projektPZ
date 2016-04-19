@@ -31,6 +31,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 /**
  *
@@ -55,13 +57,10 @@ public class loginController  implements Initializable {
     
     public  String login, haslo,login2,haslo2;
     public static String ble,ble2,id;
-    
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    
-
-        
-     
+ 
         button_zaloguj.setOnAction(new EventHandler<ActionEvent>() {
     @Override
     public void handle(ActionEvent actionEvent) {
@@ -164,11 +163,11 @@ hashowanie hash = new hashowanie();
             }
                   return true;
                }
-               
-               
-        
-      
+
 });
+      
+      			
+                
 
         
         zapomnialem_hasla.setOnAction(new EventHandler<ActionEvent>() {
@@ -188,8 +187,7 @@ hashowanie hash = new hashowanie();
            
        } 
       });
-
-    } 
+  
 
     
-}
+}}

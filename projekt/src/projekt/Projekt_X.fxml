@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="410.0" prefWidth="557.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Pane prefHeight="410.0" prefWidth="546.0">
+         <children>
+            <Label layoutX="27.0" layoutY="28.0" text="Projekt 1">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <TabPane layoutX="41.0" layoutY="80.0" prefHeight="280.0" prefWidth="468.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Zadania">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView layoutX="-5.0" prefHeight="253.0" prefWidth="479.0">
+                                <columns>
+                                  <TableColumn prefWidth="88.0" text="Nazwa" />
+                                  <TableColumn prefWidth="220.0" text="Opis" />
+                                    <TableColumn prefWidth="75.0" text="Status" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Użytkownicy">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView prefHeight="254.0" prefWidth="468.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="Nazwisko" />
+                                  <TableColumn prefWidth="75.0" text="Imię" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <Button fx:id="b_dodaj_zadanie" layoutX="160.0" layoutY="48.0" mnemonicParsing="false" text="Dodaj zadanie" />
+            <Button fx:id="b_dodaj_uzytkownika" layoutX="277.0" layoutY="48.0" mnemonicParsing="false" text="Dodaj użytkownika" />
+            <Button fx:id="b_edytuj" layoutX="419.0" layoutY="48.0" mnemonicParsing="false" text="Edytuj projekt" />
+            <Button fx:id="b_wstecz" layoutX="454.0" layoutY="371.0" mnemonicParsing="false" text="Wstecz" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -55,6 +55,7 @@ public class Zapomnialem_haslaController implements Initializable {
     private Button b_przeslij_nowe_haslo;
 
     public int kod;
+    public String mail;
     /**
      * Initializes the controller class.
      */
@@ -111,7 +112,7 @@ b_przeslij_nowe_haslo.setOnAction(new EventHandler<ActionEvent>() {
 
 		try {
 
-
+mail = f_podaj_email.getText();
 Random generator = new Random();
 
    kod=generator.nextInt();
@@ -119,11 +120,9 @@ Random generator = new Random();
    Class.forName("com.mysql.jdbc.Driver");
 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
 PreparedStatement statment = con.prepareStatement("insert into tokens (Token) VALUES ('"+kod+"') ");
-ResultSet result = statment.executeQuery(); 
+statment.executeUpdate();
 
-if(result.next()){
 
-}
 
                     
 			Message message = new MimeMessage(session);

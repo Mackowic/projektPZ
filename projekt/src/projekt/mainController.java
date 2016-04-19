@@ -68,6 +68,43 @@ public class mainController implements Initializable {
  
     }
 });
+     
+   b_projekty.setOnAction(new EventHandler<ActionEvent>() {
+    @Override
+    public void handle(ActionEvent actionEvent) {
+         
+        try {
+            
+            Parent projekty_parent = FXMLLoader.load(getClass().getResource("Projekty.fxml"));
+            Scene projekty_scene = new Scene(projekty_parent);
+            Stage projekty_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            projekty_stage.setScene(projekty_scene);
+            projekty_stage.show();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+    }
+});
+      b_uzytkownicy.setOnAction(new EventHandler<ActionEvent>() {
+    @Override
+    public void handle(ActionEvent actionEvent) {
+         
+        try {
+            
+            Parent uzytkownicy_parent = FXMLLoader.load(getClass().getResource("uzytkownicy.fxml"));
+            Scene uzytkownicy_scene = new Scene(uzytkownicy_parent);
+            Stage uzytkownicy_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            uzytkownicy_stage.setScene(uzytkownicy_scene);
+            uzytkownicy_stage.show();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+    }
+});   
 
  b_wyloguj.setOnAction(new EventHandler<ActionEvent>() {
     @Override
