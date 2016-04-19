@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="361.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.Dodaj_uzytkownikaController">
+   <children>
+      <Label layoutX="39.0" layoutY="32.0" text="Dodaj użytkownika">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="107.0" text="Imię">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="178.0" text="Telefon">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="140.0" text="Nazwisko">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="214.0" text="E-mail">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="257.0" text="Status">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="f_imie" layoutX="161.0" layoutY="105.0" />
+      <TextField fx:id="f_nazwisko" layoutX="161.0" layoutY="138.0" />
+      <TextField fx:id="f_telefon" layoutX="161.0" layoutY="176.0" />
+      <TextField fx:id="f_email" layoutX="161.0" layoutY="212.0" />
+      <ComboBox fx:id="c_status" layoutX="161.0" layoutY="255.0" prefWidth="150.0" />
+      <Button fx:id="b_zapisz" layoutX="258.0" layoutY="325.0" mnemonicParsing="false" text="Zapisz" />
+      <Button fx:id="b_anuluj" layoutX="187.0" layoutY="325.0" mnemonicParsing="false" text="Anuluj" />
+   </children>
+</AnchorPane>

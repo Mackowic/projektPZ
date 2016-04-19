@@ -11,9 +11,9 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="lib/javax.mail.jar" size="639964" download="eager" />
-    <jar href="lib/mysql-connector-java-5.1.38-bin.jar" size="1023202" download="eager" />
-    <jar href="projektPZ.jar" size="48939" download="eager" />
+    <jar href="lib/javax.mail.jar" size="639963" download="eager" />
+    <jar href="lib/mysql-connector-java-5.1.38-bin.jar" size="1023200" download="eager" />
+    <jar href="projektPZ.jar" size="82379" download="eager" />
   </resources>
 <security>
   <all-permissions/>

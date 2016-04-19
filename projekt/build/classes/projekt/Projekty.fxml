@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="projekt.ProjektyController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="32.0" layoutY="30.0" text="Projekty">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <TabPane layoutX="32.0" layoutY="82.0" prefHeight="277.0" prefWidth="449.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Aktualne">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView prefHeight="248.0" prefWidth="449.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="Nazwa" />
+                                  <TableColumn prefWidth="118.0" text="Opis" />
+                                    <TableColumn prefWidth="123.0" text="Termin początkowy" />
+                                    <TableColumn prefWidth="114.0" text="Termin końcowy" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Zakończone">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView prefHeight="252.0" prefWidth="449.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="Nazwa" />
+                                  <TableColumn prefWidth="75.0" text="Opis" />
+                                    <TableColumn prefWidth="116.0" text="Termin początkowy" />
+                                    <TableColumn prefWidth="121.0" text="Termin końcowy" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <Button fx:id="b_dodaj" layoutX="489.0" layoutY="295.0" mnemonicParsing="false" text="Dodaj projekt" />
+            <Button fx:id="b_wstecz" layoutX="489.0" layoutY="334.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" text="Wstecz" />
+            <Button fx:id="b_wiecej" layoutX="489.0" layoutY="260.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" text="Więcej..." />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
