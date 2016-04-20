@@ -40,6 +40,8 @@ import javafx.stage.Stage;
 public class UzytkownicyController implements Initializable {
  @FXML
     private Button b_dodaj;
+ @FXML
+    private Button b_szukaj;
     @FXML
     private Button b_edytuj;
     @FXML

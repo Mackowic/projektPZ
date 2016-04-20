@@ -71,7 +71,7 @@
             <Button fx:id="b_edytuj" layoutX="480.0" layoutY="206.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Edytuj" />
             <Button fx:id="b_wstecz" layoutX="482.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Wstecz" />
             <TextField layoutX="333.0" layoutY="36.0" />
-            <Button layoutX="502.0" layoutY="36.0" mnemonicParsing="false" text="Szukaj" />
+            <Button fx:id="b_szukaj" layoutX="502.0" layoutY="36.0" mnemonicParsing="false" text="Szukaj" />
          </children>
       </Pane>
    </children>
