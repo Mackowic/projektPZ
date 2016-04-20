@@ -36,10 +36,10 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField layoutX="239.0" layoutY="94.0" />
-            <TextField layoutX="239.0" layoutY="127.0" />
-            <TextField layoutX="239.0" layoutY="161.0" />
-            <TextArea layoutX="239.0" layoutY="210.0" prefHeight="150.0" prefWidth="149.0" />
+            <TextField fx:id="f_nazwa" layoutX="239.0" layoutY="94.0" />
+            <TextField fx:id="f_poczatek" layoutX="239.0" layoutY="127.0" />
+            <TextField fx:id="f_koniec" layoutX="239.0" layoutY="161.0" />
+            <TextArea fx:id="f_opis" layoutX="239.0" layoutY="210.0" prefHeight="150.0" prefWidth="149.0" />
             <Button fx:id="b_dodaj" layoutX="740.0" layoutY="358.0" mnemonicParsing="false" text="Dodaj" />
             <Button fx:id="b_anuluj" layoutX="673.0" layoutY="358.0" mnemonicParsing="false" text="Anuluj" />
             <Label layoutX="67.0" layoutY="210.0" text="Opis">
@@ -53,10 +53,10 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView prefHeight="210.0" prefWidth="361.0">
+                              <TableView fx:id="tv_vip" prefHeight="210.0" prefWidth="361.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="Nazwisko" />
-                                  <TableColumn prefWidth="75.0" text="Imię" />
+                                  <TableColumn fx:id="tc_nazwisko" prefWidth="75.0" text="Nazwisko" />
+                                  <TableColumn fx:id="tc_imie" prefWidth="75.0" text="Imię" />
                                 </columns>
                               </TableView>
                            </children>
@@ -67,10 +67,10 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView prefHeight="215.0" prefWidth="361.0">
+                              <TableView fx:id="tv_pracownicy" prefHeight="215.0" prefWidth="361.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="Nazwisko" />
-                                  <TableColumn prefWidth="75.0" text="Imię" />
+                                  <TableColumn fx:id="tc_nazwisko1" prefWidth="75.0" text="Nazwisko" />
+                                  <TableColumn fx:id="tc_imie1" prefWidth="75.0" text="Imię" />
                                 </columns>
                               </TableView>
                            </children>
@@ -79,7 +79,7 @@
                 </Tab>
               </tabs>
             </TabPane>
-            <Button layoutX="595.0" layoutY="358.0" mnemonicParsing="false" text="Wybierz" />
+            <Button fx:id="b_wybierz" layoutX="595.0" layoutY="358.0" mnemonicParsing="false" text="Wybierz" />
          </children>
       </Pane>
    </children>

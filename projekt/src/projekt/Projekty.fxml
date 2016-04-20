@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="projekt.ProjektyController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.ProjektyController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -23,12 +22,12 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView prefHeight="248.0" prefWidth="449.0">
+                              <TableView fx:id="tv_aktualne" prefHeight="248.0" prefWidth="449.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="Nazwa" />
-                                  <TableColumn prefWidth="118.0" text="Opis" />
-                                    <TableColumn prefWidth="123.0" text="Termin początkowy" />
-                                    <TableColumn prefWidth="114.0" text="Termin końcowy" />
+                                  <TableColumn fx:id="tc_nazwa" prefWidth="75.0" text="Nazwa" />
+                                  <TableColumn fx:id="tc_opis" prefWidth="118.0" text="Opis" />
+                                    <TableColumn fx:id="tc_poczatek" prefWidth="123.0" text="Termin początkowy" />
+                                    <TableColumn fx:id="tc_koniec" prefWidth="114.0" text="Termin końcowy" />
                                 </columns>
                               </TableView>
                            </children>
@@ -39,12 +38,12 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView prefHeight="252.0" prefWidth="449.0">
+                              <TableView fx:id="tv_zakonczone" prefHeight="252.0" prefWidth="449.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="Nazwa" />
-                                  <TableColumn prefWidth="75.0" text="Opis" />
-                                    <TableColumn prefWidth="116.0" text="Termin początkowy" />
-                                    <TableColumn prefWidth="121.0" text="Termin końcowy" />
+                                  <TableColumn fx:id="tc_nazwa1" prefWidth="75.0" text="Nazwa" />
+                                  <TableColumn fx:id="tc_opis1" prefWidth="75.0" text="Opis" />
+                                    <TableColumn fx:id="tc_poczatek1" prefWidth="116.0" text="Termin początkowy" />
+                                    <TableColumn fx:id="tc_koniec1" prefWidth="121.0" text="Termin końcowy" />
                                 </columns>
                               </TableView>
                            </children>
