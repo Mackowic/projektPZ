@@ -77,56 +77,56 @@ public class TokenController implements Initializable {
  b_ok.setOnAction(new EventHandler<ActionEvent>() {
     @Override
     public void handle(ActionEvent actionEvent) {
-       
-        
-        
-        if(walidacjaPola() & walidacjaHasło() & walidacjaKlucz()){
-         
-            Zapomnialem_haslaController token = new Zapomnialem_haslaController();
-         
-            if(Integer.toString(token.kod).equals(f_klucz.getText())){
-   
-try {
-         hashowanie hash = new hashowanie();
-       
-         Zapomnialem_haslaController mail = new Zapomnialem_haslaController();
-         Class.forName("com.mysql.jdbc.Driver");
-         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
-         PreparedStatement statment = con.prepareStatement("select idHasla from uzytkownicy where Mail='"+mail.mail+"'");
-ResultSet result = statment.executeQuery(); 
-
-if(result.next()){
-System.out.println(result.getInt(1)); // do testowania
-}
-          statment = con.prepareStatement("UPDATE hasla SET Haslo='"+hash.crypt(f_nowe_haslo.getText())+"' WHERE  idHasla='"+result.getInt(1)+"'");
-         statment.executeUpdate();
-         
-         statment = con.prepareStatement("delete from tokens where Token='"+f_klucz.getText()+"'");
-         statment.executeUpdate();
-         
-     } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Popraw_daneController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Popraw_daneController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            
-            
         try {
-            
-            Parent login_parent = FXMLLoader.load(getClass().getResource("login.fxml"));
-                Scene login_scene = new Scene(login_parent);
-                Stage login_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                login_stage.setScene(login_scene);
-                login_stage.show();
-            
-        } catch (IOException ex) {
-            Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
+            Zapomnialem_haslaController email = new Zapomnialem_haslaController();
+            System.out.println(email.mail);
+            if(walidacjaPola() & walidacjaHasło()  & walidacjaKlucz2()){
+                
+                try {
+                    hashowanie hash = new hashowanie();
+                    
+                    
+                    Class.forName("com.mysql.jdbc.Driver");
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
+                    PreparedStatement statment = con.prepareStatement("select idHasla from uzytkownicy where Mail like '"+email.mail+"'");
+                    ResultSet result = statment.executeQuery();
+                    
+                    if(result.next()){
+                        System.out.println(result.getInt(1)); // do testowania
+                    }
+                    statment = con.prepareStatement("UPDATE hasla SET Haslo='"+hash.crypt(f_nowe_haslo.getText())+"' WHERE  idHasla='"+Integer.toString(result.getInt(1))+"'");
+                    statment.executeUpdate();
+                    
+                    statment = con.prepareStatement("delete from tokens where Token like '"+f_klucz.getText()+"'");
+                    statment.executeUpdate();
+                    
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Popraw_daneController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Popraw_daneController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                
+                try {
+                    
+                    Parent login_parent = FXMLLoader.load(getClass().getResource("login.fxml"));
+                    Scene login_scene = new Scene(login_parent);
+                    Stage login_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                    login_stage.setScene(login_scene);
+                    login_stage.show();
+                    
+                } catch (IOException ex) {
+                    Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                
+            }   } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TokenController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(TokenController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
- 
     }
-    }}
-    //Artur
+       //Artur
                private boolean walidacjaPola(){
                    if(f_klucz.getText().isEmpty() | f_nowe_haslo.getText().isEmpty()  |
                             f_powtorz_haslo.getText().isEmpty()){
@@ -160,26 +160,41 @@ System.out.println(result.getInt(1)); // do testowania
                    }
                }
                //Artur
-               private boolean walidacjaKlucz(){
-        Pattern p = Pattern.compile("[0-9]+");
-        Matcher m = p.matcher(f_klucz.getText());
-        if(m.find() && m.group().equals(f_klucz.getText())){
-            return true;
-            
-        }else{
-                Alert alert = new Alert(AlertType.WARNING);
-                alert.setTitle("Nie poprawny klucz");
-                alert.setHeaderText(null);
-                alert.setContentText("Wprowadź poprawny klucz");
-                alert.showAndWait();
-                
-                return false;
-            }
+               
           
           
-      }
+      
 });         
          
     }    
-    
+    private boolean walidacjaKlucz2() throws ClassNotFoundException, SQLException{
+                 
+                 
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
+            PreparedStatement statment = con.prepareStatement("select Token from tokens where Token like '"+f_klucz.getText()+"'");
+            ResultSet result = statment.executeQuery(); 
+
+        if(result.next()){
+            System.out.println(result.getString(1)+" "); // do testowania
+}
+
+  
+                   
+         if(f_klucz.getText().equals(result.getString(1))){
+                     
+                 
+                    return true;
+            
+                   }else{
+               
+                
+                 Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Podaj poprawny klucz");
+                alert.showAndWait();  
+                return false;
+                   }
+               } 
 }

@@ -50,9 +50,9 @@
                            <children>
                               <TableView fx:id="tv_pracowincy" prefHeight="263.0" prefWidth="435.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="Nazwisko" />
-                                  <TableColumn prefWidth="75.0" text="Imię" />
-                                    <TableColumn prefWidth="75.0" text="Projekty" />
+                                  <TableColumn fx:id="tc_nazwisko2" prefWidth="75.0" text="Nazwisko" />
+                                  <TableColumn fx:id="tc_imie2" prefWidth="75.0" text="Imię" />
+                                    <TableColumn fx:id="tc_projekty2" prefWidth="75.0" text="Projekty" />
                                 </columns>
                               </TableView>
                            </children>
