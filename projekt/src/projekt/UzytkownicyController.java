@@ -30,6 +30,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -72,6 +73,9 @@ public class UzytkownicyController implements Initializable {
     private TableColumn<User, String> tc_imie2;
     @FXML
     private TableColumn<User, String> tc_projekty2;
+    
+    public static String  Imie , Nazwisko, Mail, Telefon;
+    public static int ID;
     
     /**
      * Initializes the controller class.
@@ -116,20 +120,82 @@ public class UzytkownicyController implements Initializable {
              ));
              tv_vip.setItems(data1);
          }
+         
+         statment = con.prepareStatement("select Nazwisko , Imie from uzytkownicy where Nazwisko like 'B%'");
+         result = statment.executeQuery();
+         
+         while(result.next()){
+             data2.add(new User(
+             result.getString("Nazwisko"),
+             result.getString("Imie") 
+             ));
+             tv_pracowincy.setItems(data2);
+         }
    
-         // cos tu nie dziala :(
-         /**tv_wszyscy.setOnMouseClicked(e -> {
-             try {
-                 User user = (User)tv_wszyscy.getSelectionModel().getSelectedItem();   
-         statment = con.prepareStatement("select Nazwisko , Imie from uzytkownicy");
-          result = statment.executeQuery();
-                 
-                 
-                    } catch (SQLException ex) {
-                 Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
-             }}
-     
-             );//*/
+         
+         tv_wszyscy.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+             public void handle(MouseEvent e) {
+                 try {
+                     User user = (User)tv_wszyscy.getSelectionModel().getSelectedItem();
+                     PreparedStatement statment1 = con.prepareStatement("select Imie , Nazwisko, Mail, Telefon, idUzytkownika from uzytkownicy where Imie ='"+user.getImie()+"'  and Nazwisko ='"+user.getNazwisko()+"' ");
+                     ResultSet result1 = statment1.executeQuery();
+                     
+                     while(result1.next()){
+                         Imie = result1.getString(1);
+                         Nazwisko = result1.getString(2);
+                         Mail = result1.getString(3);
+                         Telefon = result1.getString(4);
+                         ID = result1.getInt(5);
+            
+         }  } catch (SQLException ex) {
+                     Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
+                 }
+             }
+         });//
+                     
+         tv_vip.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+             public void handle(MouseEvent e) {
+                 try {
+                     User user = (User)tv_vip.getSelectionModel().getSelectedItem();
+                     PreparedStatement statment1 = con.prepareStatement("select Imie , Nazwisko, Mail, Telefon, idUzytkownika from uzytkownicy where Imie ='"+user.getImie()+"'  and Nazwisko ='"+user.getNazwisko()+"' ");
+                     ResultSet result1 = statment1.executeQuery();
+                     
+                     while(result1.next()){
+                         Imie = result1.getString(1);
+                         Nazwisko = result1.getString(2);
+                         Mail = result1.getString(3);
+                         Telefon = result1.getString(4);
+                         ID = result1.getInt(5);
+            
+         }  } catch (SQLException ex) {
+                     Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
+                 }
+             }
+         });//
+          tv_pracowincy.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+             public void handle(MouseEvent e) {
+                 try {
+                     User user = (User)tv_wszyscy.getSelectionModel().getSelectedItem();
+                     PreparedStatement statment1 = con.prepareStatement("select Imie , Nazwisko, Mail, Telefon, idUzytkownika from uzytkownicy where Imie ='"+user.getImie()+"'  and Nazwisko ='"+user.getNazwisko()+"' ");
+                     ResultSet result1 = statment1.executeQuery();
+                     
+                     while(result1.next()){
+                         Imie = result1.getString(1);
+                         Nazwisko = result1.getString(2);
+                         Mail = result1.getString(3);
+                         Telefon = result1.getString(4);
+                         ID = result1.getInt(5);
+            
+         }
+                     
+                 } catch (SQLException ex) {
+                     Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
+                 }
+             }
+         });//
          
          b_wstecz.setOnAction(new EventHandler<ActionEvent>() {
              @Override
@@ -185,6 +251,25 @@ public class UzytkownicyController implements Initializable {
                  
              }
          });
+         
+         b_usun.setOnAction(new EventHandler<ActionEvent>() {
+             @Override
+             public void handle(ActionEvent actionEvent) {
+                 
+                 try {
+                     Class.forName("com.mysql.jdbc.Driver");
+                     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
+                     PreparedStatement statment = con.prepareStatement("delete from uzytkownicy where idUzytkownika = '"+ID+"'");
+                     statment.executeUpdate();
+                 } catch (ClassNotFoundException ex) {
+                     Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
+                 } catch (SQLException ex) {
+                     Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
+                 }
+                 
+             }
+         });
+         
          // TODO
      } catch (ClassNotFoundException ex) {
          Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
