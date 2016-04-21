@@ -55,7 +55,7 @@ public class Zapomnialem_haslaController implements Initializable {
     private Button b_przeslij_nowe_haslo;
 
     public int kod;
-    public String mail;
+    public static String mail;
     /**
      * Initializes the controller class.
      */
@@ -109,7 +109,7 @@ b_przeslij_nowe_haslo.setOnAction(new EventHandler<ActionEvent>() {
            
           
           });
-
+                if(walidacjaEmail2()){
 		try {
 
 mail = f_podaj_email.getText();
@@ -118,7 +118,7 @@ Random generator = new Random();
    kod=generator.nextInt();
    
    Class.forName("com.mysql.jdbc.Driver");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz?useUnicode=true&characterEncoding=utf-8","root","");
 PreparedStatement statment = con.prepareStatement("insert into tokens (Token) VALUES ('"+kod+"') ");
 statment.executeUpdate();
 
@@ -164,6 +164,7 @@ statment.executeUpdate();
      }  
         
            }
+                }
 
             
             
@@ -184,7 +185,11 @@ statment.executeUpdate();
      }  
         
  
-       }
+       }   catch (ClassNotFoundException ex) {
+               Logger.getLogger(Zapomnialem_haslaController.class.getName()).log(Level.SEVERE, null, ex);
+           } catch (SQLException ex) {
+               Logger.getLogger(Zapomnialem_haslaController.class.getName()).log(Level.SEVERE, null, ex);
+           }
     } 
     }
      //Artur
@@ -207,20 +212,37 @@ statment.executeUpdate();
                }
                
 });            
-        
+    //Artur i  Maciek    
     }    
-    
+    private boolean walidacjaEmail2() throws ClassNotFoundException, SQLException{
+                 
+                 
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
+            PreparedStatement statment = con.prepareStatement("select Mail from uzytkownicy where Mail like '"+f_podaj_email.getText()+"'");
+            ResultSet result = statment.executeQuery(); 
+
+        if(result.next()){
+            System.out.println(result.getString(1)+" "); // do testowania
 }
 
-
+  
+                   
+         if(f_podaj_email.getText().equals(result.getString(1))){
+                     
+                 
+                    return true;
+            
+                   }else{
                
-          
-      
-
-        
-
-
-        
+                
+                 Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Podaj poprawny e-mail");
+                alert.showAndWait();  
+                return false;
+                   }
+               } 
     
-
-    
+}

@@ -63,7 +63,7 @@ public class Popraw_daneController implements Initializable {
             loginController login = new loginController();
              System.out.println(login.ble);
 Class.forName("com.mysql.jdbc.Driver");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz?useUnicode=true&characterEncoding=utf-8","root","");
 PreparedStatement statment = con.prepareStatement("select Imie, Nazwisko, Mail, Telefon  from uzytkownicy where Mail='"+login.ble+"'");
 ResultSet result = statment.executeQuery(); 
 
@@ -87,7 +87,7 @@ f_telefon.setText(result.getString(4));// do testowania
         
      if(walidacjaEmail() & walidacjaImie() & walidacjaNazwisko() & walidacjaPola() & walidacjaTelefon()){  
      try {
-         
+         System.out.println(f_imie.getText());
          loginController login = new loginController();
          Class.forName("com.mysql.jdbc.Driver");
          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");

@@ -53,8 +53,6 @@ public class UzytkownicyController implements Initializable {
     @FXML
     private TableView<User> tv_vip;
     @FXML
-    private TableView<User> tv_pracownicy;
-    @FXML
     private TableColumn<User, String> tc_nazwisko;
     @FXML
     private TableColumn<User, String> tc_imie;
@@ -66,6 +64,14 @@ public class UzytkownicyController implements Initializable {
     private TableColumn<User, String> tc_status;
     @FXML
     private TableColumn<User, String> tc_projekty;
+    @FXML
+    private TableView<User> tv_pracowincy;
+    @FXML
+    private TableColumn<User, String> tc_nazwisko2;
+    @FXML
+    private TableColumn<User, String> tc_imie2;
+    @FXML
+    private TableColumn<User, String> tc_projekty2;
     
     /**
      * Initializes the controller class.
@@ -75,11 +81,15 @@ public class UzytkownicyController implements Initializable {
      try {
          final ObservableList <User> data = FXCollections.observableArrayList();
          final ObservableList <User> data1 = FXCollections.observableArrayList();
+         final ObservableList <User> data2 = FXCollections.observableArrayList();
          tc_nazwisko.setCellValueFactory(new PropertyValueFactory<User,String>("Nazwisko"));
          tc_imie.setCellValueFactory(new PropertyValueFactory<User,String>("Imie"));
          
          tc_nazwisko1.setCellValueFactory(new PropertyValueFactory<User,String>("Nazwisko"));
          tc_imie1.setCellValueFactory(new PropertyValueFactory<User,String>("Imie"));
+         
+         tc_nazwisko2.setCellValueFactory(new PropertyValueFactory<User,String>("Nazwisko"));
+         tc_imie2.setCellValueFactory(new PropertyValueFactory<User,String>("Imie"));
          
          Class.forName("com.mysql.jdbc.Driver");
          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz","root","");
@@ -108,18 +118,18 @@ public class UzytkownicyController implements Initializable {
          }
    
          // cos tu nie dziala :(
-         tv_wszyscy.setRowFactory( tv -> {
-    TableRow<User> row = new TableRow<>();
-    row.setOnMouseClicked(event -> {
-        if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
-            User rowData = row.getItem();
-            System.out.println(rowData);
-        }
-    });
-    return row ;
-});
-         
-         //
+         /**tv_wszyscy.setOnMouseClicked(e -> {
+             try {
+                 User user = (User)tv_wszyscy.getSelectionModel().getSelectedItem();   
+         statment = con.prepareStatement("select Nazwisko , Imie from uzytkownicy");
+          result = statment.executeQuery();
+                 
+                 
+                    } catch (SQLException ex) {
+                 Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
+             }}
+     
+             );//*/
          
          b_wstecz.setOnAction(new EventHandler<ActionEvent>() {
              @Override
