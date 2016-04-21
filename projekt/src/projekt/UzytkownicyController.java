@@ -17,6 +17,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -27,11 +29,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+import java.util.function.Predicate;
 
 /**
  * FXML Controller class
@@ -76,6 +80,8 @@ public class UzytkownicyController implements Initializable {
     
     public static String  Imie , Nazwisko, Mail, Telefon;
     public static int ID;
+    @FXML
+    private TextField f_szukaj;
     
     /**
      * Initializes the controller class.
@@ -149,7 +155,19 @@ public class UzytkownicyController implements Initializable {
                          ID = result1.getInt(5);
             
          }  } catch (SQLException ex) {
-                     Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
+                       if(ex.getCause() instanceof Exception){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd połączenia z bazą danych");
+                alert.showAndWait();
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd");
+                alert.showAndWait();
+     }
                  }
              }
          });//
@@ -170,7 +188,19 @@ public class UzytkownicyController implements Initializable {
                          ID = result1.getInt(5);
             
          }  } catch (SQLException ex) {
-                     Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
+                       if(ex.getCause() instanceof Exception){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd połączenia z bazą danych");
+                alert.showAndWait();
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd");
+                alert.showAndWait();
+     }
                  }
              }
          });//
@@ -192,10 +222,54 @@ public class UzytkownicyController implements Initializable {
          }
                      
                  } catch (SQLException ex) {
-                     Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
+                       if(ex.getCause() instanceof Exception){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd połączenia z bazą danych");
+                alert.showAndWait();
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("błąd");
+                alert.showAndWait();
+     }
                  }
              }
-         });//
+         });
+          
+          
+          FilteredList<User> filteredData = new FilteredList<>(data, e -> true);
+          
+          f_szukaj.setOnKeyReleased(e ->{
+              f_szukaj.textProperty().addListener((observableValue, oldValue, newValue) ->{
+          
+          filteredData.setPredicate((Predicate<? super User>) user->{
+          if(newValue == null || newValue.isEmpty()){
+          return true;
+          }
+          String lowerCaseFilter = newValue.toLowerCase();
+          // tu moze byc blad
+          if(user.getImie().contains(newValue)){
+          return true;
+          }else 
+          if(user.getNazwisko().toLowerCase().contains(lowerCaseFilter)){
+          return true;
+          }
+              return false;
+          });
+  
+          });
+          
+              SortedList<User> sortedData = new SortedList<>(filteredData);
+              sortedData.comparatorProperty().bind(tv_wszyscy.comparatorProperty());
+              tv_wszyscy.setItems(sortedData);
+              
+         });
+          
+          
+          
          
          b_wstecz.setOnAction(new EventHandler<ActionEvent>() {
              @Override
@@ -264,7 +338,19 @@ public class UzytkownicyController implements Initializable {
                  } catch (ClassNotFoundException ex) {
                      Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
                  } catch (SQLException ex) {
-                     Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
+                       if(ex.getCause() instanceof Exception){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd połączenia z bazą danych");
+                alert.showAndWait();
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Bład");
+                alert.showAndWait();
+     }
                  }
                  
              }
@@ -274,7 +360,19 @@ public class UzytkownicyController implements Initializable {
      } catch (ClassNotFoundException ex) {
          Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
      } catch (SQLException ex) {
-         Logger.getLogger(UzytkownicyController.class.getName()).log(Level.SEVERE, null, ex);
+           if(ex.getCause() instanceof Exception){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd połączenia z bazą danych");
+                alert.showAndWait();
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Bład");
+                alert.showAndWait();
+     }
      }
     }    
     

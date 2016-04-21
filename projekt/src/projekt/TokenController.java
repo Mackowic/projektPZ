@@ -16,8 +16,6 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -27,7 +25,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -103,7 +100,19 @@ public class TokenController implements Initializable {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(Popraw_daneController.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (SQLException ex) {
-                    Logger.getLogger(Popraw_daneController.class.getName()).log(Level.SEVERE, null, ex);
+                     if(ex.getCause() instanceof Exception){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd połączenia z bazą danych");
+                alert.showAndWait();
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błedne dane");
+                alert.showAndWait();
+     }
                 }
                 
                 
@@ -123,7 +132,19 @@ public class TokenController implements Initializable {
             }   } catch (ClassNotFoundException ex) {
             Logger.getLogger(TokenController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(TokenController.class.getName()).log(Level.SEVERE, null, ex);
+              if(ex.getCause() instanceof Exception){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd połączenia z bazą danych");
+                alert.showAndWait();
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błedne dane");
+                alert.showAndWait();
+     }
         }
     }
        //Artur

@@ -188,7 +188,19 @@ statment.executeUpdate();
        }   catch (ClassNotFoundException ex) {
                Logger.getLogger(Zapomnialem_haslaController.class.getName()).log(Level.SEVERE, null, ex);
            } catch (SQLException ex) {
-               Logger.getLogger(Zapomnialem_haslaController.class.getName()).log(Level.SEVERE, null, ex);
+                 if(ex.getCause() instanceof Exception){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd połączenia z bazą danych");
+                alert.showAndWait();
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błędne dane");
+                alert.showAndWait();
+     }
            }
     } 
     }

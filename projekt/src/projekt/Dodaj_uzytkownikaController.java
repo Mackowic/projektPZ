@@ -17,6 +17,8 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -25,6 +27,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -88,7 +91,7 @@ public class Dodaj_uzytkownikaController implements Initializable {
          final String email = "zapomniane_haslo@poczta.fm";
        final String pass = "lampalampanos123!"; 
        
-       
+       if(walidacjaEmail() & walidacjaImie() & walidacjaNazwisko() & walidacjaPola() & walidacjaTelefon()){
         try {
             Properties props = new Properties();
 		props.put("mail.smtp.host", "smtp.poczta.fm");
@@ -148,12 +151,120 @@ statment.executeUpdate();
             } catch (ClassNotFoundException ex) {
             Logger.getLogger(Dodaj_uzytkownikaController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Dodaj_uzytkownikaController.class.getName()).log(Level.SEVERE, null, ex);
+            if(ex.getCause() instanceof Exception){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd połączenia z bazą danych");
+                alert.showAndWait();
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("E-mail istnieje w bazie danych");
+                alert.showAndWait();
+     }  
         } catch (MessagingException ex) {
             Logger.getLogger(Dodaj_uzytkownikaController.class.getName()).log(Level.SEVERE, null, ex);
         }
  
-    }
+    }}
+    //Artur
+               private boolean walidacjaPola(){
+                   if(f_imie.getText().isEmpty() | f_nazwisko.getText().isEmpty()  |
+                            f_email.getText().isEmpty() | f_telefon.getText().isEmpty() ){
+                           
+       
+            
+        
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Puste pole");
+                alert.setHeaderText(null);
+                alert.setContentText("Wpisz dane do pola");
+                alert.showAndWait();
+                
+                return false;
+            }
+                  return true;
+               }
+               //Artur
+               private boolean walidacjaEmail(){
+        Pattern p = Pattern.compile("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-­Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z­]{2,})$");
+        Matcher m = p.matcher(f_email.getText());
+        if(m.find() && m.group().equals(f_email.getText())){
+            return true;
+            
+        }else{
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Nie poprawny e-mail");
+                alert.setHeaderText(null);
+                alert.setContentText("Wprowadź poprawny e-mail");
+                alert.showAndWait();
+                
+                return false;
+            }
+          
+          
+      }
+            //Artur
+               private boolean walidacjaImie(){
+        Pattern p = Pattern.compile("[a-zA-Ząśżźćńłóę]+");
+        Matcher m = p.matcher(f_imie.getText());
+        if(m.find() && m.group().equals(f_imie.getText())){
+            return true;
+            
+        }else{
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Nie poprawne imię");
+                alert.setHeaderText(null);
+                alert.setContentText("Wprowadź poprawne imię bez znaków specjalnych i liter !@#$%^&*(){}[]?/<>: itp.");
+                alert.showAndWait();
+                
+                return false;
+            }
+          
+          
+      }    
+       //Artur
+               private boolean walidacjaNazwisko(){
+        Pattern p = Pattern.compile("[a-zA-Ząśżźćńłóę]+");
+        Matcher m = p.matcher(f_nazwisko.getText());
+        if(m.find() && m.group().equals(f_nazwisko.getText())){
+            return true;
+            
+        }else{
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Nie poprawne Nazwisko");
+                alert.setHeaderText(null);
+                alert.setContentText("Wprowadź poprawne Nazwisko bez znaków specjalnych i liter !@#$%^&*(){}[]?/<>: itp.");
+                alert.showAndWait();
+                
+                return false;
+            }
+          
+          
+      }
+               //Artur
+               private boolean walidacjaTelefon(){
+        Pattern p = Pattern.compile("[0-9]+");
+        Matcher m = p.matcher(f_telefon.getText());
+        if(m.find() && m.group().equals(f_telefon.getText())){
+            return true;
+            
+        }else{
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Nie poprawny nr.telefonu");
+                alert.setHeaderText(null);
+                alert.setContentText("Wprowadź poprawny nr.telefonu");
+                alert.showAndWait();
+                
+                return false;
+            }
+          
+          
+      }
+               
+         
 });  
     }    
     

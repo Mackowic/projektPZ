@@ -109,7 +109,19 @@ f_telefon.setText(result.getString(4));// do testowania
      } catch (ClassNotFoundException ex) {
             Logger.getLogger(Popraw_daneController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Popraw_daneController.class.getName()).log(Level.SEVERE, null, ex);
+              if(ex.getCause() instanceof Exception){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd połączenia z bazą danych");
+                alert.showAndWait();
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("E-mail istnieje w bazie danych");
+                alert.showAndWait();
+     }
         }
  
     }
@@ -152,8 +164,8 @@ f_telefon.setText(result.getString(4));// do testowania
           
       }
             //Artur
-               private boolean walidacjaImie(){
-        Pattern p = Pattern.compile("[a-zA-Z]+");
+              private boolean walidacjaImie(){
+        Pattern p = Pattern.compile("[a-zA-Ząśżźćńłóę]+");
         Matcher m = p.matcher(f_imie.getText());
         if(m.find() && m.group().equals(f_imie.getText())){
             return true;
@@ -171,8 +183,8 @@ f_telefon.setText(result.getString(4));// do testowania
           
       }    
        //Artur
-               private boolean walidacjaNazwisko(){
-        Pattern p = Pattern.compile("[a-zA-Z]+");
+                private boolean walidacjaNazwisko(){
+        Pattern p = Pattern.compile("[a-zA-Ząśżźćńłóę]+");
         Matcher m = p.matcher(f_nazwisko.getText());
         if(m.find() && m.group().equals(f_nazwisko.getText())){
             return true;

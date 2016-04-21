@@ -93,13 +93,37 @@ public class Zmien_hasloController implements Initializable {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(Moje_daneController.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (SQLException ex) {     
-                    Logger.getLogger(Moje_daneController.class.getName()).log(Level.SEVERE, null, ex);
+                      if(ex.getCause() instanceof Exception){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd połączenia z bazą danych");
+                alert.showAndWait();
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd");
+                alert.showAndWait();
+     }
                 }
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Zmien_hasloController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Zmien_hasloController.class.getName()).log(Level.SEVERE, null, ex);
+              if(ex.getCause() instanceof Exception){
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd połączenia z bazą danych");
+                alert.showAndWait();
+     }else{ 
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Błąd");
+                alert.showAndWait();
+     }
         }
     }
     
