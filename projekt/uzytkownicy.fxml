@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.UzytkownicyController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TabPane layoutX="32.0" layoutY="73.0" prefHeight="290.0" prefWidth="435.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Wszyscy">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tv_wszyscy" layoutY="6.0" prefHeight="257.0" prefWidth="435.0">
+                                <columns>
+                                  <TableColumn fx:id="tc_nazwisko" prefWidth="75.0" text="Nazwisko" />
+                                  <TableColumn fx:id="tc_imie" prefWidth="75.0" text="Imię" />
+                                    <TableColumn fx:id="tc_status" prefWidth="75.0" text="Status" />
+                                    <TableColumn fx:id="tc_projekty" prefWidth="75.0" text="Projekty" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="VIP">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tv_vip" prefHeight="264.0" prefWidth="435.0">
+                                <columns>
+                                  <TableColumn fx:id="tc_nazwisko1" prefWidth="75.0" text="Nazwisko" />
+                                  <TableColumn fx:id="tc_imie1" prefWidth="75.0" text="Imię" />
+                                    <TableColumn prefWidth="75.0" text="Projekty" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Pracownicy">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tv_pracowincy" prefHeight="263.0" prefWidth="435.0">
+                                <columns>
+                                  <TableColumn fx:id="tc_nazwisko2" prefWidth="75.0" text="Nazwisko" />
+                                  <TableColumn fx:id="tc_imie2" prefWidth="75.0" text="Imię" />
+                                    <TableColumn fx:id="tc_projekty2" prefWidth="75.0" text="Projekty" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <Label layoutX="32.0" layoutY="32.0" text="Użytkownicy">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="b_dodaj" layoutX="482.0" layoutY="117.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Dodaj" />
+            <Button fx:id="b_usun" layoutX="480.0" layoutY="160.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Usuń" />
+            <Button fx:id="b_edytuj" layoutX="480.0" layoutY="206.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Edytuj" />
+            <Button fx:id="b_wstecz" layoutX="482.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Wstecz" />
+            <TextField fx:id="f_szukaj" layoutX="333.0" layoutY="36.0" />
+            <Button fx:id="b_szukaj" layoutX="502.0" layoutY="36.0" mnemonicParsing="false" text="Szukaj" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

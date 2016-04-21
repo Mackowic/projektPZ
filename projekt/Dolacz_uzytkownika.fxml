@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="569.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="555.0">
+         <children>
+            <Label layoutX="32.0" layoutY="36.0" text="Dołącz użytkownika">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TabPane layoutX="43.0" layoutY="84.0" prefHeight="282.0" prefWidth="491.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="VIP">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView prefHeight="265.0" prefWidth="491.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="Nazwisko" />
+                                  <TableColumn prefWidth="75.0" text="Imię" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Pracownik">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView layoutX="-2.0" prefHeight="263.0" prefWidth="499.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="Nazwisko" />
+                                  <TableColumn prefWidth="75.0" text="Imię" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <Button fx:id="b_dolacz" layoutX="482.0" layoutY="366.0" mnemonicParsing="false" text="Dołącz" />
+            <Button fx:id="b_anuluj" layoutX="410.0" layoutY="366.0" mnemonicParsing="false" text="Anuluj" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
