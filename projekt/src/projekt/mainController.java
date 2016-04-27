@@ -105,7 +105,24 @@ public class mainController implements Initializable {
  
     }
 });   
-
+  b_zadania.setOnAction(new EventHandler<ActionEvent>() {
+    @Override
+    public void handle(ActionEvent actionEvent) {
+         
+        try {
+            
+            Parent zadania_parent = FXMLLoader.load(getClass().getResource("Moje_zadania.fxml"));
+            Scene zadania_scene = new Scene(zadania_parent);
+            Stage zadania_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            zadania_stage.setScene(zadania_scene);
+            zadania_stage.show();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+    }
+});
  b_wyloguj.setOnAction(new EventHandler<ActionEvent>() {
     @Override
     public void handle(ActionEvent actionEvent) {
