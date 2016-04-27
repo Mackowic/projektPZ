@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="projekt.Moje_zadaniaController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="45.0" layoutY="34.0" prefHeight="43.0" prefWidth="132.0" text="Moje zadania">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TabPane layoutX="29.0" layoutY="93.0" prefHeight="288.0" prefWidth="427.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Aktualne">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="lv_aktualne" layoutX="-1.0" prefHeight="262.0" prefWidth="435.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Przekazane do testów">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="lv_testy" layoutX="-5.0" layoutY="-3.0" prefHeight="264.0" prefWidth="438.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Zakończone">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="lv_zakonczone" layoutX="-1.0" prefHeight="260.0" prefWidth="434.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <Button fx:id="b_wiecej" layoutX="469.0" layoutY="294.0" mnemonicParsing="false" text="Więcej " />
+            <Button fx:id="b_wstecz" layoutX="470.0" layoutY="342.0" mnemonicParsing="false" text="Wstecz" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
