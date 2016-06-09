@@ -7,16 +7,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.ProjektyController">
+<AnchorPane id="AnchorPane" prefHeight="522.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.ProjektyController">
    <children>
-      <Pane prefHeight="400.0" prefWidth="600.0">
+      <Pane layoutY="85.0" prefHeight="439.0" prefWidth="701.0" style="-fx-background-color: grey;">
          <children>
-            <Label layoutX="32.0" layoutY="30.0" text="Projekty">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-            <TabPane layoutX="32.0" layoutY="82.0" prefHeight="277.0" prefWidth="449.0" tabClosingPolicy="UNAVAILABLE">
+            <TabPane layoutX="224.0" layoutY="83.0" prefHeight="277.0" prefWidth="449.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab text="Aktualne">
                   <content>
@@ -24,10 +19,10 @@
                            <children>
                               <TableView fx:id="tv_aktualne" prefHeight="248.0" prefWidth="449.0">
                                 <columns>
-                                  <TableColumn fx:id="tc_nazwa" prefWidth="75.0" text="Nazwa" />
-                                  <TableColumn fx:id="tc_opis" prefWidth="118.0" text="Opis" />
-                                    <TableColumn fx:id="tc_poczatek" prefWidth="123.0" text="Termin początkowy" />
-                                    <TableColumn fx:id="tc_koniec" prefWidth="114.0" text="Termin końcowy" />
+                                  <TableColumn fx:id="tc_nazwa" prefWidth="104.0" resizable="false" text="Nazwa" />
+                                  <TableColumn fx:id="tc_opis" minWidth="0.0" prefWidth="129.0" resizable="false" text="Opis" />
+                                    <TableColumn fx:id="tc_poczatek" prefWidth="116.0" resizable="false" text="Termin początkowy" />
+                                    <TableColumn fx:id="tc_koniec" prefWidth="99.0" resizable="false" text="Termin końcowy" />
                                 </columns>
                               </TableView>
                            </children>
@@ -40,10 +35,10 @@
                            <children>
                               <TableView fx:id="tv_zakonczone" prefHeight="252.0" prefWidth="449.0">
                                 <columns>
-                                  <TableColumn fx:id="tc_nazwa1" prefWidth="75.0" text="Nazwa" />
-                                  <TableColumn fx:id="tc_opis1" prefWidth="75.0" text="Opis" />
-                                    <TableColumn fx:id="tc_poczatek1" prefWidth="116.0" text="Termin początkowy" />
-                                    <TableColumn fx:id="tc_koniec1" prefWidth="121.0" text="Termin końcowy" />
+                                  <TableColumn fx:id="tc_nazwa1" prefWidth="107.0" resizable="false" text="Nazwa" />
+                                  <TableColumn fx:id="tc_opis1" prefWidth="118.0" resizable="false" text="Opis" />
+                                    <TableColumn fx:id="tc_poczatek1" prefWidth="123.0" resizable="false" text="Termin początkowy" />
+                                    <TableColumn fx:id="tc_koniec1" prefWidth="100.0" resizable="false" text="Termin końcowy" />
                                 </columns>
                               </TableView>
                            </children>
@@ -52,9 +47,30 @@
                 </Tab>
               </tabs>
             </TabPane>
-            <Button fx:id="b_dodaj" layoutX="489.0" layoutY="295.0" mnemonicParsing="false" text="Dodaj projekt" />
-            <Button fx:id="b_wstecz" layoutX="489.0" layoutY="334.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" text="Wstecz" />
-            <Button fx:id="b_wiecej" layoutX="489.0" layoutY="260.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" text="Więcej..." />
+            <Button fx:id="b_dodaj" layoutX="584.0" layoutY="375.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #3b7244;" text="Dodaj projekt" textFill="WHITE" />
+            <Button fx:id="b_wiecej" layoutX="484.0" layoutY="375.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #3b7244;" text="Więcej..." textFill="WHITE" />
+         </children>
+      </Pane>
+      <Button fx:id="b_wyloguj" layoutX="616.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 82 82; -fx-background-insets: 5;" styleClass="b_wyloguj" stylesheets="@../img/new.css" text=" " />
+      <Pane fx:id="logo" prefHeight="85.0" prefWidth="620.0" style="-fx-background-size: 620 85; -fx-background-repeat: no-repeat; -fx-background-color: black;" styleClass="logo" stylesheets="@../img/new.css">
+         <children>
+            <Label layoutX="228.0" layoutY="34.0" text="Projekty" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="tlomenu" layoutY="85.0" opacity="0.8" prefHeight="439.0" prefWidth="211.0" style="-fx-background-color: black;">
+         <children>
+            <Button fx:id="b_zadania" layoutX="14.0" layoutY="26.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_zadania" stylesheets="@../img/new.css" text=" " />
+            <Button fx:id="b_projekty" layoutX="106.0" layoutY="26.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-size: 90 90; -fx-background-position: center; -fx-background-insets: 5;" styleClass="b_projekty" stylesheets="@../img/new.css" />
+            <Button fx:id="b_testuj" layoutX="106.0" layoutY="129.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_testuj" stylesheets="@../img/new.css" text=" " />
+            <Button fx:id="b_moje_dane" layoutX="14.0" layoutY="129.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-size: 90 90; -fx-background-position: center; -fx-background-insets: 5;" styleClass="b_moje_dane" stylesheets="@../img/new.css" />
+            <Button fx:id="b_uzytkownicy" layoutX="106.0" layoutY="129.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_uzytkownicy" stylesheets="@../img/new.css" text=" " />
+            <Button fx:id="b_ustawienia_systemowe" layoutX="14.0" layoutY="233.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_ustawienia_systemowe" stylesheets="@../img/new.css" text=" " />
+            <Button fx:id="b_lokalny" layoutX="106.0" layoutY="233.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_lokalny" stylesheets="@../img/new.css" text=" " />
+            <Button fx:id="b_globalny" layoutX="14.0" layoutY="334.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_globalny" stylesheets="@../img/new.css" text=" " />
          </children>
       </Pane>
    </children>

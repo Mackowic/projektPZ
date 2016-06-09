@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.Opusc_zadanieController">
+   <children>
+      <Pane prefHeight="402.0" prefWidth="600.0" style="-fx-background-color: #2a2a2a;">
+         <children>
+            <Label layoutX="41.0" layoutY="23.0" text="Skomentuj zadanie " textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="b_wstecz" layoutX="375.0" layoutY="343.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #3b7244;" text="Wstecz" textFill="WHITE" />
+            <Button fx:id="b_zapisz" layoutX="471.0" layoutY="343.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #3b7244;" text="Zapisz" textFill="WHITE" />
+            <TextArea fx:id="a_komentarz" layoutX="41.0" layoutY="72.0" prefHeight="242.0" prefWidth="518.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

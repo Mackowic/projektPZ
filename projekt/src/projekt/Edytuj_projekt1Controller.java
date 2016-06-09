@@ -35,24 +35,22 @@ import javafx.stage.Stage;
  *
  * @author Maciek
  */
-public class Dodaj_projektController implements Initializable {
+public class Edytuj_projekt1Controller implements Initializable {
 
     @FXML
-    private Button b_dodaj;
+    private Button b_zapisz;
     @FXML
     private Button b_anuluj;
     @FXML
     private TextField f_nazwa;
     @FXML
+    private TextArea f_opis;
+    @FXML
     private TextField f_poczatek;
     @FXML
     private TextField f_koniec;
-    @FXML
-    private TextArea f_opis;
 
-    public String ludzie = "";
-
-    int i = 0;
+    String stara_nazwa;
 
     /**
      * Initializes the controller class.
@@ -60,9 +58,64 @@ public class Dodaj_projektController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
+        ProjektyController pro = new ProjektyController();
+
+        f_nazwa.setText(pro.Nazwa);
+        f_poczatek.setText(pro.Poczatek);
+        f_koniec.setText(pro.Koniec);
+        f_opis.setText(pro.Opis);
+        stara_nazwa = f_nazwa.getText();
+
         /**
-         * Anonimowa metoda dla przycisku b_anuluj - cofa do poprzedniwgo widoku
-         * Tworzy stage i scene do widoku Projekty.fxml
+         * Anonimowa metoda dla przycisku b_zapisz - zatwierdza dokonane zmiany
+         * w projekcie , updatuje baze i otwiera widok Projekt_X.fxml
+         *
+         * @exception IOExeption ex - wyjatek odnoscie otwierania i znajdywania
+         * plików fmxl
+         * @exception SQLException ex - wyjatek zajmujący się obsługą bazy
+         * danych
+         * @exception ClassNotFoundException ex - wyjatek wystepujacy kiedy nie
+         * mozna odnalezc klasy
+         */
+        b_zapisz.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    if (walidacjaPola() && walidacjaNazwa() && walidacjaData() && walidacjaData1() && walidacjaData2() && walidacjaData3() && walidacjaData4()) {
+                        try {
+
+                            Class.forName("com.mysql.jdbc.Driver");
+                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz?characterEncoding=utf8", "root", "");
+                            PreparedStatement statment = con.prepareStatement("UPDATE projekty SET Nazwa='" + f_nazwa.getText() + "', Poczatek='" + f_poczatek.getText() + "', Koniec='" + f_koniec.getText() + "' ,Opis='" + f_opis.getText() + "' WHERE  idProjektu='" + pro.IDprojektu + "'");
+                            statment.executeUpdate();
+                            statment = con.prepareStatement("UPDATE zadania SET projekt='" + f_nazwa.getText() + "' WHERE  projekt='" + stara_nazwa + "'");
+                            statment.executeUpdate();
+                            pro.Nazwa = f_nazwa.getText();
+                            Parent projektx_parent = FXMLLoader.load(getClass().getResource("Projekt_X.fxml"));
+                            Scene projektx_scene = new Scene(projektx_parent);
+                            Stage projektx_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                            projektx_stage.setScene(projektx_scene);
+                            projektx_stage.show();
+
+                        } catch (IOException ex) {
+                            Logger.getLogger(Projekt_XController.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (ClassNotFoundException ex) {
+                            Logger.getLogger(Edytuj_projekt1Controller.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (SQLException ex) {
+                            Logger.getLogger(Edytuj_projekt1Controller.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+
+                    }
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Edytuj_projekt1Controller.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Edytuj_projekt1Controller.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        /**
+         * Anonimowa metoda dla przycisku b_anuluj - cofa do widoku
+         * Projekt_X.fxml
          *
          * @exception IOExeption ex - wyjatek odnoscie otwierania i znajdywania
          * plików fmxl
@@ -73,77 +126,19 @@ public class Dodaj_projektController implements Initializable {
 
                 try {
 
-                    Parent projekty_parent = FXMLLoader.load(getClass().getResource("Projekty.fxml"));
-                    Scene projekty_scene = new Scene(projekty_parent);
-                    Stage projekty_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                    projekty_stage.setScene(projekty_scene);
-                    projekty_stage.show();
+                    Parent projektx_parent = FXMLLoader.load(getClass().getResource("Projekt_X.fxml"));
+                    Scene projektx_scene = new Scene(projektx_parent);
+                    Stage projektx_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                    projektx_stage.setScene(projektx_scene);
+                    projektx_stage.show();
 
                 } catch (IOException ex) {
-                    Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Projekt_XController.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             }
         });
 
-        /**
-         * Anonimowa metoda dla przycisku b_dodaj - dodaje nowy projekt Tworzy
-         * stage i scene do widoku Projekty.fxml
-         *
-         * @exception IOExeption ex - wyjatek odnoscie otwierania i znajdywania
-         * plików fmxl
-         * @exception SQLException ex - wyjatek zajmujący się obsługą bazy
-         * danych
-         */
-        b_dodaj.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                try {
-                    if (walidacjaPola() && walidacjaNazwa() && walidacjaData() && walidacjaData1() && walidacjaData2() && walidacjaData3() && walidacjaData4()) {
-                        try {
-
-                            Class.forName("com.mysql.jdbc.Driver");
-                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz?characterEncoding=utf8", "root", "");
-                            loginController login = new loginController();
-                            System.out.println(login.id);
-                            PreparedStatement statment = con.prepareStatement("insert into zadania (Nazwa,idUprawnienia,idUzytkownika,Opis,projekt,Status_zadania) VALUES ('Dodaj nowych uzytownikow i stworz nowe zadania',1,'" + login.uzytkownikID + "','O to twoje pierwsze zadanie!!','" + f_nazwa.getText() + "','Aktualne')");
-                            statment.executeUpdate();
-                            statment = con.prepareStatement("select idZadania from zadania where idUzytkownika='" + login.uzytkownikID + "'");
-                            ResultSet result = statment.executeQuery();
-
-                            if (result.next()) {
-                                System.out.println(result.getString(1)); // do testowania
-                            }
-
-                            statment = con.prepareStatement("insert into projekty (Nazwa,Opis,Poczatek,Koniec, idZadania, idUzytkownika,ludzie) VALUES ('" + f_nazwa.getText() + "','" + f_opis.getText() + "','" + f_poczatek.getText() + "','" + f_koniec.getText() + "','" + result.getString(1) + "','" + login.uzytkownikID + "','" + login.uzytkownikID + "')");
-                            statment.executeUpdate();
-                            if (login.uzytkownikID.equals("1")) {
-                            } else {
-                                statment = con.prepareStatement("update uzytkownicy set ranga='1' where idUzytkownika='" + login.uzytkownikID + "'");
-                                statment.executeUpdate();
-                            }
-//trzeba poprawic komende sql
-                            Parent projekty_parent = FXMLLoader.load(getClass().getResource("Projekty.fxml"));
-                            Scene projekty_scene = new Scene(projekty_parent);
-                            Stage projekty_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                            projekty_stage.setScene(projekty_scene);
-                            projekty_stage.show();
-
-                        } catch (IOException ex) {
-                            Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
-                        } catch (ClassNotFoundException ex) {
-                            Logger.getLogger(Dodaj_projektController.class.getName()).log(Level.SEVERE, null, ex);
-                        } catch (SQLException ex) {
-                            Logger.getLogger(Dodaj_projektController.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(Dodaj_projektController.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (SQLException ex) {
-                    Logger.getLogger(Dodaj_projektController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
     }
 
     /**
@@ -292,19 +287,10 @@ public class Dodaj_projektController implements Initializable {
 
     }
 
-    /**
-     *
-     * Metoda sprawdzająca czy taki projekt juz istnieje
-     *
-     * @author Artur
-     * @return true lib false
-     * @throws ClassNotFoundException
-     * @throws SQLException
-     */
     private boolean walidacjaNazwa() throws ClassNotFoundException, SQLException {
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz", "root", "");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pz?characterEncoding=utf8", "root", "");
         PreparedStatement statment = con.prepareStatement("SELECT Nazwa FROM projekty where Nazwa like '" + f_nazwa.getText() + "'");
         ResultSet result = statment.executeQuery();
 
@@ -332,13 +318,6 @@ public class Dodaj_projektController implements Initializable {
         return true;
     }
 
-    /**
-     *
-     * Metoda sprawdzająca czy wymagane pola nie sa puste
-     *
-     * @author Artur
-     * @return true lib false
-     */
     private boolean walidacjaPola() {
         if (f_nazwa.getText().isEmpty() | f_poczatek.getText().isEmpty()
                 | f_koniec.getText().isEmpty() | f_opis.getText().isEmpty()) {

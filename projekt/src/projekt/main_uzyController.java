@@ -26,10 +26,11 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
+ * FXML Controller class
  *
  * @author Maciek
  */
-public class mainController implements Initializable {
+public class main_uzyController implements Initializable {
 
     @FXML
     private Button b_zadania;
@@ -38,15 +39,15 @@ public class mainController implements Initializable {
     @FXML
     private Button b_moje_dane;
     @FXML
-    private Button b_uzytkownicy;
-    @FXML
     private Button b_wyloguj;
-
     @FXML
     private Label l_name;
     @FXML
-    private Button b_ustwaienia_systemowe;
+    private Button b_testuj;
 
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         /**
@@ -125,32 +126,6 @@ public class mainController implements Initializable {
             }
         });
         /**
-         * Anonimowa metoda dla przycisku b_uzytkownicy - otwiera widok
-         * uzytkownicy.fxml gdzie mozna stworzyc nowego uzytkownika, usunac
-         * uzytkownika
-         *
-         * @exception IOExeption ex - wyjatek odnoscie otwierania i znajdywania
-         * plików fmxl
-         */
-        b_uzytkownicy.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-
-                try {
-
-                    Parent uzytkownicy_parent = FXMLLoader.load(getClass().getResource("uzytkownicy.fxml"));
-                    Scene uzytkownicy_scene = new Scene(uzytkownicy_parent);
-                    Stage uzytkownicy_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                    uzytkownicy_stage.setScene(uzytkownicy_scene);
-                    uzytkownicy_stage.show();
-
-                } catch (IOException ex) {
-                    Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-            }
-        });
-        /**
          * Anonimowa metoda dla przycisku b_wyloguj - otwiera widok login.fxml
          * gdzie mozna sie zalogowac do konta
          *
@@ -187,5 +162,31 @@ public class mainController implements Initializable {
 
             }
         });
+     /**
+         * Anonimowa metoda dla przycisku b_testuj - otwiera widok
+         * testuj.fxml gdzie mozna przetestowac 
+         *
+         * @exception IOExeption ex - wyjatek odnoscie otwierania i znajdywania
+         * plików fmxl
+         */
+    b_testuj.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+
+                try {
+
+                    Parent moje_zadanie_parent = FXMLLoader.load(getClass().getResource("testuj.fxml"));
+                    Scene moje_zadanie_scene = new Scene(moje_zadanie_parent);
+                    Stage moje_zadanie_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                    moje_zadanie_stage.setScene(moje_zadanie_scene);
+                    moje_zadanie_stage.show();
+
+                } catch (IOException ex) {
+                    Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+        });
     }
+
 }
