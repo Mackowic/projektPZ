@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="481.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.ZadanieX2Controller">
+    <children>
+        <AnchorPane id="AnchorPane" layoutX="-4.0" prefHeight="488.0" prefWidth="855.0" style="-fx-background-color: #2a2a2a;">
+            <children>
+                <Pane layoutX="-14.0" prefHeight="488.0" prefWidth="865.0" style="-fx-background-color: #2a2a2a;">
+                    <children>
+                        <Label fx:id="l_zadanie" layoutX="28.0" layoutY="34.0" text="ZadanieX" textFill="WHITE">
+                            <font>
+                                <Font size="21.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="450.0" layoutY="65.0" text="Wybierz użytkownika" textFill="WHITE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="b_wstecz" layoutX="657.0" layoutY="440.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #3b7244;" text="Wstecz" textFill="WHITE" />
+                        <Button fx:id="b_zatwierdz" layoutX="752.0" layoutY="266.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #3b7244;" text="Zatwierdź" textFill="WHITE" />
+                        <TextArea fx:id="a_opis" layoutX="30.0" layoutY="106.0" prefHeight="107.0" prefWidth="375.0" />
+                        <ScrollPane layoutX="36.0" layoutY="307.0" prefHeight="113.0" prefWidth="789.0">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                        <ListView fx:id="lv_komentarze" prefHeight="113.0" prefWidth="774.0" style="-fx-background-color: #4d4d4d;" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </ScrollPane>
+                        <Button fx:id="b_skomentuj" layoutX="752.0" layoutY="440.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #3b7244;" text="Skomentuj" textFill="WHITE" />
+                        <ScrollPane layoutX="450.0" layoutY="102.0" prefHeight="151.0" prefWidth="375.0">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="tv_uzytkownicy" editable="true" prefHeight="151.0" prefWidth="361.0">
+                                            <columns>
+                                                <TableColumn fx:id="tc_nazwisko" maxWidth="200.0" prefWidth="180.0" resizable="false" text="Nazwisko" />
+                                                <TableColumn fx:id="tc_imie" maxWidth="200.0" prefWidth="180.0" resizable="false" text="Imię" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </ScrollPane>
+                        <TextField fx:id="f_szukaj" layoutX="676.0" layoutY="66.0" promptText="Szukaj" />
+                        <TextField fx:id="f_uzytkownik" editable="false" layoutX="154.0" layoutY="228.0" prefHeight="25.0" prefWidth="250.0" />
+                        <Label layoutX="30.0" layoutY="227.0" text="Użytkownik" textFill="WHITE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

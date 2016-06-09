@@ -7,12 +7,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="569.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.Dolacz_uzytkownikaController">
    <children>
-      <Pane prefHeight="400.0" prefWidth="555.0">
+      <Pane prefHeight="411.0" prefWidth="569.0" style="-fx-background-color: #2a2a2a;">
          <children>
-            <Label layoutX="32.0" layoutY="36.0" text="Dołącz użytkownika">
+            <Label layoutX="32.0" layoutY="36.0" text="Dołącz użytkownika" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
@@ -23,10 +22,10 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView prefHeight="265.0" prefWidth="491.0">
+                              <TableView fx:id="tv_vip" prefHeight="265.0" prefWidth="491.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="Nazwisko" />
-                                  <TableColumn prefWidth="75.0" text="Imię" />
+                                  <TableColumn fx:id="tc_nazwisko" prefWidth="245.0" text="Nazwisko" />
+                                  <TableColumn fx:id="tc_imie" prefWidth="245.0" text="Imię" />
                                 </columns>
                               </TableView>
                            </children>
@@ -37,10 +36,10 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView layoutX="-2.0" prefHeight="263.0" prefWidth="499.0">
+                              <TableView fx:id="tv_pracownik" layoutX="-2.0" prefHeight="263.0" prefWidth="499.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="Nazwisko" />
-                                  <TableColumn prefWidth="75.0" text="Imię" />
+                                  <TableColumn fx:id="tc_nazwisko1" prefWidth="244.0" text="Nazwisko" />
+                                  <TableColumn fx:id="tc_imie1" prefWidth="248.0" text="Imię" />
                                 </columns>
                               </TableView>
                            </children>
@@ -49,8 +48,8 @@
                 </Tab>
               </tabs>
             </TabPane>
-            <Button fx:id="b_dolacz" layoutX="482.0" layoutY="366.0" mnemonicParsing="false" text="Dołącz" />
-            <Button fx:id="b_anuluj" layoutX="410.0" layoutY="366.0" mnemonicParsing="false" text="Anuluj" />
+            <Button fx:id="b_dolacz" layoutX="462.0" layoutY="373.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #3b7244;" text="Dołącz" textFill="WHITE" />
+            <Button fx:id="b_anuluj" layoutX="370.0" layoutY="373.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #3b7244;" text="Anuluj" textFill="WHITE" />
          </children>
       </Pane>
    </children>

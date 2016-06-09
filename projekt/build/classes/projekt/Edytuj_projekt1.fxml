@@ -7,42 +7,41 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane id="AnchorPane" prefHeight="406.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.Edytuj_projekt1Controller">
    <children>
-      <Pane prefHeight="406.0" prefWidth="600.0">
+      <Pane prefHeight="406.0" prefWidth="386.0" style="-fx-background-color: #2a2a2a;">
          <children>
-            <Label layoutX="35.0" layoutY="31.0" text="Edytuj projekt">
+            <Label layoutX="23.0" layoutY="37.0" text="Edytuj projekt" textFill="WHITE">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutX="78.0" layoutY="81.0" text="Nazwa">
+            <Label layoutX="33.0" layoutY="83.0" text="Nazwa" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="78.0" layoutY="113.0" text="Termin początkowy">
+            <Label layoutX="33.0" layoutY="115.0" text="Termin początkowy" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="78.0" layoutY="145.0" text="Termin końcowy">
+            <Label layoutX="33.0" layoutY="147.0" text="Termin końcowy" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="78.0" layoutY="176.0" text="Opis">
+            <Label layoutX="33.0" layoutY="178.0" text="Opis" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField layoutX="245.0" layoutY="81.0" />
-            <TextField layoutX="245.0" layoutY="113.0" />
-            <TextField layoutX="245.0" layoutY="145.0" />
-            <TextArea layoutX="245.0" layoutY="189.0" prefHeight="124.0" prefWidth="149.0" />
-            <Button fx:id="b_zapisz" layoutX="342.0" layoutY="344.0" mnemonicParsing="false" text="Zapisz" />
-            <Button fx:id="b_anuluj" layoutX="274.0" layoutY="344.0" mnemonicParsing="false" text="Anuluj" />
+            <TextField fx:id="f_nazwa" layoutX="200.0" layoutY="83.0" />
+            <TextField fx:id="f_poczatek" layoutX="200.0" layoutY="114.0" promptText="RRRR-MM-DD" />
+            <TextField fx:id="f_koniec" layoutX="200.0" layoutY="146.0" promptText="RRRR-MM-DD" />
+            <TextArea fx:id="f_opis" layoutX="200.0" layoutY="191.0" prefHeight="124.0" prefWidth="149.0" />
+            <Button fx:id="b_zapisz" layoutX="249.0" layoutY="346.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #3b7244;" text="Zapisz" textFill="WHITE" />
+            <Button fx:id="b_anuluj" layoutX="135.0" layoutY="346.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #3b7244;" text="Anuluj" textFill="WHITE" />
          </children>
       </Pane>
    </children>

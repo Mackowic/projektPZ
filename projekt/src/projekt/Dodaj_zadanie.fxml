@@ -7,36 +7,50 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="377.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="377.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.Dodaj_zadanieController">
    <children>
-      <Pane layoutY="6.0" prefHeight="394.0" prefWidth="371.0">
+      <Pane layoutY="-6.0" prefHeight="406.0" prefWidth="640.0" style="-fx-background-color: #2a2a2a;">
          <children>
-            <Label layoutX="41.0" layoutY="36.0" text="Dodaj zadanie">
+            <Label layoutX="41.0" layoutY="36.0" text="Dodaj zadanie" textFill="WHITE">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutX="82.0" layoutY="93.0" text="Nazwa">
+            <Label layoutX="56.0" layoutY="98.0" text="Nazwa" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="81.0" layoutY="140.0" text="Użytkownik">
+            <Label layoutX="55.0" layoutY="135.0" text="Projekt" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="81.0" layoutY="185.0" text="Projekt">
+            <TextField fx:id="f_nazwa" layoutX="154.0" layoutY="98.0" />
+            <TextField fx:id="f_projekt" editable="false" layoutX="154.0" layoutY="135.0" />
+            <ScrollPane layoutX="375.0" layoutY="89.0" prefHeight="263.0" prefWidth="251.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="264.0" prefWidth="253.0">
+                     <children>
+                        <TableView fx:id="tv_uzytkownicy" layoutX="-5.0" prefHeight="263.0" prefWidth="251.0">
+                          <columns>
+                            <TableColumn fx:id="tc_nazwisko" prefWidth="135.0" text="Nazwisko" />
+                            <TableColumn fx:id="tc_imie" prefWidth="106.0" text="Imię" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <TextField fx:id="f_szukaj" layoutX="477.0" layoutY="40.0" />
+            <Label layoutX="55.0" layoutY="183.0" text="Opis" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField layoutX="180.0" layoutY="93.0" />
-            <TextField layoutX="180.0" layoutY="140.0" />
-            <Button fx:id="b_zapisz" layoutX="274.0" layoutY="276.0" mnemonicParsing="false" text="Zapisz" />
-            <TextField layoutX="180.0" layoutY="185.0" />
-            <Button fx:id="b_wstecz" layoutX="204.0" layoutY="276.0" mnemonicParsing="false" text="Wstecz" />
+            <TextArea fx:id="t_opis" layoutX="154.0" layoutY="172.0" prefHeight="132.0" prefWidth="149.0" />
+            <Button fx:id="b_zapisz" layoutX="541.0" layoutY="367.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #3b7244;" text="Zapisz" textFill="WHITE" />
+            <Button fx:id="b_wstecz" layoutX="435.0" layoutY="367.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #3b7244;" text="Wstecz" textFill="WHITE" />
          </children>
       </Pane>
    </children>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="514.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.TestujController">
+    <children>
+        <Pane layoutX="209.0" layoutY="85.0" prefHeight="429.0" prefWidth="490.0" style="-fx-background-color: #4a4a4a;">
+            <children>
+                <ScrollPane layoutX="18.0" layoutY="16.0" prefHeight="360.0" prefWidth="448.0">
+                    <content>
+                        <TableView fx:id="tv_testuj" prefHeight="361.0" prefWidth="448.0">
+                            <columns>
+                                <TableColumn fx:id="tc_zadanie" minWidth="7.0" prefWidth="275.0" resizable="false" text="Zadanie" />
+                                <TableColumn fx:id="tc_projekt" maxWidth="401.0" prefWidth="167.0" resizable="false" text="Projekt" />
+                            </columns>
+                        </TableView>
+                    </content>
+                </ScrollPane>
+                <Button fx:id="b_dobrze" layoutX="202.0" layoutY="390.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #3b7244;" text="Dobrze" textFill="WHITE" />
+                <Button fx:id="b_zle" layoutX="346.0" layoutY="390.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #3b7244;" text="Źle" textFill="WHITE" />
+            </children>
+        </Pane>
+        <Pane fx:id="logo" layoutX="-1.0" prefHeight="85.0" prefWidth="698.0" style="-fx-background-size: 615 85; -fx-background-repeat: no-repeat; -fx-background-color: black;" styleClass="logo" stylesheets="@../img/new.css">
+            <children>
+                <Label layoutX="218.0" layoutY="37.0" text="Zadania do testowania" textFill="WHITE">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Label>
+                <Button fx:id="b_wyloguj" layoutX="615.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 82 82; -fx-background-insets: 5;" styleClass="b_wyloguj" stylesheets="@../img/new.css" text=" " />
+            </children>
+        </Pane>
+        <Pane fx:id="tlomenu" layoutX="-1.0" layoutY="85.0" opacity="0.9" prefHeight="429.0" prefWidth="210.0" style="-fx-background-color: black;">
+            <children>
+                <Button fx:id="b_zadania" layoutX="14.0" layoutY="26.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_zadania" stylesheets="@../img/new.css" text=" " />
+                <Button fx:id="b_projekty" layoutX="106.0" layoutY="26.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-size: 90 90; -fx-background-position: center; -fx-background-insets: 5;" styleClass="b_projekty" stylesheets="@../img/new.css" />
+                <Button fx:id="b_testuj" layoutX="106.0" layoutY="129.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_testuj" stylesheets="@../img/new.css" text=" " />
+                <Button fx:id="b_moje_dane" layoutX="14.0" layoutY="129.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-size: 90 90; -fx-background-position: center; -fx-background-insets: 5;" styleClass="b_moje_dane" stylesheets="@../img/new.css" />
+                <Button fx:id="b_uzytkownicy" layoutX="106.0" layoutY="129.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_uzytkownicy" stylesheets="@../img/new.css" text=" " />
+                <Button fx:id="b_ustawienia_systemowe" layoutX="14.0" layoutY="233.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_ustawienia_systemowe" stylesheets="@../img/new.css" text=" " />
+                <Button fx:id="b_lokalny" layoutX="106.0" layoutY="233.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_lokalny" stylesheets="@../img/new.css" text=" " />
+                <Button fx:id="b_globalny" layoutX="14.0" layoutY="333.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_globalny" stylesheets="@../img/new.css" text=" " />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

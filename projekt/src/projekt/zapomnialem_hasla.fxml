@@ -7,26 +7,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="230.0" prefWidth="436.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="projekt.Zapomnialem_haslaController">
+<AnchorPane id="AnchorPane" prefHeight="217.0" prefWidth="381.0" style="-fx-background-color: #2a2a2a;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.Zapomnialem_haslaController">
    <children>
-      <Label layoutX="23.0" layoutY="28.0" text="Zapomniałem hasła">
+      <Label layoutX="23.0" layoutY="28.0" text="Zapomniałem hasła" textFill="WHITE">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="23.0" layoutY="87.0" text="Podaj adres e-mail: ">
+      <Label layoutX="33.0" layoutY="84.0" prefHeight="25.0" prefWidth="161.0" text="Podaj adres e-mail: " textFill="WHITE">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="f_podaj_email" layoutX="182.0" layoutY="85.0" prefHeight="22.0" prefWidth="154.0" />
-      <Button fx:id="b_anuluj" layoutX="85.0" layoutY="139.0" mnemonicParsing="false" text="Anuluj">
+      <TextField fx:id="f_podaj_email" layoutX="203.0" layoutY="86.0" prefHeight="25.0" prefWidth="155.0" />
+      <Button fx:id="b_anuluj" layoutX="33.0" layoutY="139.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="154.0" style="-fx-background-color: #3b7244;" text="Anuluj" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="b_przeslij_nowe_haslo" layoutX="182.0" layoutY="139.0" mnemonicParsing="false" text="Prześlij nowe hasło">
+      <Button fx:id="b_przeslij_nowe_haslo" layoutX="203.0" layoutY="139.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="166.0" style="-fx-background-color: #3b7244;" text="Prześlij nowe hasło" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

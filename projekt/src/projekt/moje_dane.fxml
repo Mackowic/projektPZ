@@ -5,72 +5,85 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="576.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.Moje_daneController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="692.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.Moje_daneController">
    <children>
-      <Label layoutX="38.0" layoutY="25.0" text="Moje dane..">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="80.0" layoutY="92.0" text="Imię:">
+      <Pane layoutX="210.0" layoutY="85.0" prefHeight="424.0" prefWidth="484.0" style="-fx-background-color: #4a4a4a;" />
+      <Label layoutX="266.0" layoutY="163.0" text="Imię:" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="l_imie" layoutX="242.0" layoutY="92.0" prefHeight="20.0" prefWidth="167.0">
+      <Label fx:id="l_imie" layoutX="428.0" layoutY="163.0" prefHeight="20.0" prefWidth="167.0" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="80.0" layoutY="131.0" text="Nazwisko:">
+      <Label layoutX="266.0" layoutY="202.0" text="Nazwisko:" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="l_nazwisko" layoutX="242.0" layoutY="131.0" prefHeight="20.0" prefWidth="167.0">
+      <Label fx:id="l_nazwisko" layoutX="428.0" layoutY="202.0" prefHeight="20.0" prefWidth="167.0" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="80.0" layoutY="168.0" text="Adres e-mail:">
+      <Label layoutX="266.0" layoutY="239.0" text="Adres e-mail:" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="l_login" layoutX="242.0" layoutY="168.0" prefHeight="20.0" prefWidth="167.0">
+      <Label fx:id="l_login" layoutX="428.0" layoutY="239.0" prefHeight="20.0" prefWidth="167.0" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="80.0" layoutY="203.0" text="Hasło:">
+      <Label layoutX="266.0" layoutY="274.0" text="Hasło:" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="l_haslo" layoutX="242.0" layoutY="203.0" prefHeight="20.0" prefWidth="167.0">
+      <Label fx:id="l_haslo" layoutX="428.0" layoutY="274.0" prefHeight="20.0" prefWidth="167.0" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="80.0" layoutY="236.0" text="Telefon:">
+      <Label layoutX="266.0" layoutY="307.0" text="Telefon:" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="l_telefon" layoutX="242.0" layoutY="236.0" prefHeight="20.0" prefWidth="167.0">
+      <Label fx:id="l_telefon" layoutX="428.0" layoutY="307.0" prefHeight="20.0" prefWidth="167.0" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Button fx:id="b_zmien_haslo" layoutX="61.0" layoutY="289.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="112.0" text="Zmień hasło" textAlignment="CENTER">
+      <Button fx:id="b_zmien_haslo" layoutX="371.0" layoutY="403.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="112.0" style="-fx-background-color: #3b7244;" text="Zmień hasło" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="b_popraw_dane" layoutX="235.0" layoutY="289.0" mnemonicParsing="false" text="Popraw dane">
+      <Button fx:id="b_popraw_dane" layoutX="545.0" layoutY="403.0" mnemonicParsing="false" style="-fx-background-color: #3b7244;" text="Popraw dane" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="b_wstecz" layoutX="403.0" layoutY="289.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="112.0" text="Wstecz">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
+      <Button fx:id="b_wyloguj" layoutX="607.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 82 82; -fx-background-insets: 5;" styleClass="b_wyloguj" stylesheets="@../img/new.css" text=" " />
+      <Pane fx:id="logo" prefHeight="85.0" prefWidth="607.0" style="-fx-background-size: 615 85; -fx-background-repeat: no-repeat;" styleClass="logo" stylesheets="@../img/new.css">
+         <children>
+            <Label layoutX="217.0" layoutY="32.0" text="Moje dane" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="tlomenu" layoutY="85.0" opacity="0.9" prefHeight="424.0" prefWidth="211.0" style="-fx-background-color: black;">
+         <children>
+            <Button fx:id="b_zadania" layoutX="14.0" layoutY="26.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_zadania" stylesheets="@../img/new.css" text=" " />
+            <Button fx:id="b_projekty" layoutX="106.0" layoutY="26.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-size: 90 90; -fx-background-position: center; -fx-background-insets: 5;" styleClass="b_projekty" stylesheets="@../img/new.css" />
+            <Button fx:id="b_testuj" layoutX="106.0" layoutY="129.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_testuj" stylesheets="@../img/new.css" text=" " />
+            <Button fx:id="b_moje_dane" layoutX="14.0" layoutY="129.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-size: 90 90; -fx-background-position: center; -fx-background-insets: 5;" styleClass="b_moje_dane" stylesheets="@../img/new.css" />
+            <Button fx:id="b_uzytkownicy" layoutX="106.0" layoutY="129.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_uzytkownicy" stylesheets="@../img/new.css" text=" " />
+            <Button fx:id="b_ustawienia_systemowe" layoutX="14.0" layoutY="233.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_ustawienia_systemowe" stylesheets="@../img/new.css" text=" " />
+            <Button fx:id="b_lokalny" layoutX="106.0" layoutY="233.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_lokalny" stylesheets="@../img/new.css" text=" " />
+            <Button fx:id="b_globalny" layoutX="14.0" layoutY="332.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-position: center; -fx-background-size: 90 90; -fx-background-insets: 5;" styleClass="b_globalny" stylesheets="@../img/new.css" text=" " />
+         </children>
+      </Pane>
    </children>
 </Pane>

@@ -1,0 +1,60 @@
+.anuluj{
+-fx-background-image : url("wstecz2.jpg");
+
+}
+.b_wstecz{
+-fx-background-image : url("wstecz3.jpg");
+
+}
+
+.logo{
+-fx-background-image : url("logo3.jpg");
+
+}
+.logo2{
+-fx-background-image : url("m9.jpg");
+
+}
+
+.b_wyloguj{
+-fx-background-image : url("wyloguj2.jpg");
+
+}
+
+.b_zadania{
+-fx-background-image : url("mojezadania3.jpg");
+
+}
+
+.b_globalny{
+-fx-background-image : url("glob.jpg");
+
+}
+.b_lokalny{
+-fx-background-image : url("lokalny.jpg");
+
+}
+
+.b_projekty{
+-fx-background-image : url("projekty2.jpg");
+
+}
+.b_moje_dane{
+-fx-background-image : url("mojedane2.jpg");
+
+}
+
+.b_testuj{
+-fx-background-image : url("testuj.jpg");
+
+}
+
+.b_uzytkownicy{
+-fx-background-image : url("uzytkownicy.jpg");
+
+}
+
+.b_ustawienia_systemowe{
+-fx-background-image : url("ustsys.jpg");
+
+}

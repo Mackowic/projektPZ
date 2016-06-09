@@ -5,25 +5,21 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="414.0" prefWidth="386.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.loginController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="326.0" prefWidth="278.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.loginController">
    <children>
-      <Label layoutX="110.0" layoutY="47.0" text="Zaloguj się.." textAlignment="CENTER">
-         <font>
-            <Font name="System Bold" size="27.0" />
-         </font>
-      </Label>
-      <TextField fx:id="textfield_login" layoutX="109.0" layoutY="121.0" prefHeight="22.0" prefWidth="167.0" promptText="E-mail" />
-      <PasswordField fx:id="pwfield_haslo" layoutX="109.0" layoutY="178.0" prefHeight="22.0" prefWidth="167.0" promptText="Hasło" />
-      <Button fx:id="button_zaloguj" layoutX="109.0" layoutY="231.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="Zaloguj">
+      <Label fx:id="logo" layoutX="-13.0" prefHeight="379.0" prefWidth="304.0" style="-fx-background-position: center; -fx-background-repeat: no-repeat; -fx-background-size: 300 375;" styleClass="logo2" stylesheets="@../img/new.css" textFill="RED" />
+      <TextField fx:id="textfield_login" layoutX="55.0" layoutY="109.0" prefHeight="22.0" prefWidth="167.0" promptText="E-mail" />
+      <PasswordField fx:id="pwfield_haslo" layoutX="55.0" layoutY="164.0" prefHeight="22.0" prefWidth="167.0" promptText="Hasło" />
+      <Button fx:id="button_zaloguj" layoutX="55.0" layoutY="220.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="167.0" style="-fx-background-color: #3b7244;" text="Zaloguj" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Hyperlink fx:id="zapomnialem_hasla" layoutX="228.0" layoutY="323.0" text="Zapomniałem hasła" underline="true">
+      <Hyperlink fx:id="zapomnialem_hasla" layoutX="126.0" layoutY="290.0" text="Zapomniałem hasła" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Hyperlink>
-      <Label fx:id="l_error" layoutX="167.0" layoutY="291.0" textFill="RED" />
+      <Label fx:id="l_error" layoutX="118.0" layoutY="196.0" prefHeight="14.0" prefWidth="44.0" textFill="RED" />
    </children>
 </Pane>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="344.0" prefWidth="809.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.ZadanieXController">
+    <children>
+        <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="334.0" prefWidth="799.0">
+            <children>
+                <Pane layoutX="-14.0" layoutY="-11.0" prefHeight="345.0" prefWidth="814.0" style="-fx-background-color: #2d2d2d;">
+                    <children>
+                        <Label fx:id="l_zadanie" layoutX="28.0" layoutY="34.0" text="ZadanieX" textFill="WHITE">
+                            <font>
+                                <Font size="21.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="28.0" layoutY="97.0" text="Opis zadania" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="29.0" layoutY="190.0" text="Użytkownik" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="28.0" layoutY="243.0" text="Status" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="b_opusc" layoutX="337.0" layoutY="188.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #3b7244;" text="Opuść" textFill="WHITE" />
+                        <Button fx:id="b_wstecz" layoutX="726.0" layoutY="304.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #3b7244;" text="Wstecz" textFill="WHITE" />
+                        <Button fx:id="b_zatwierdz" layoutX="336.0" layoutY="243.0" mnemonicParsing="false" style="-fx-background-color: #3b7244;" text="Zatwierdź" textFill="WHITE" />
+                        <ComboBox fx:id="c_status" layoutX="115.0" layoutY="243.0" prefHeight="25.0" prefWidth="202.0" />
+                        <TextArea fx:id="a_opis" editable="false" layoutX="115.0" layoutY="95.0" prefHeight="78.0" prefWidth="290.0" />
+                        <TextField fx:id="f_uzytkownik" editable="false" layoutX="116.0" layoutY="188.0" prefHeight="25.0" prefWidth="202.0" />
+                        <ScrollPane layoutX="419.0" layoutY="95.0" prefHeight="179.0" prefWidth="375.0">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                        <ListView fx:id="lv_komentarze" prefHeight="193.0" prefWidth="359.0" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </ScrollPane>
+                        <Button fx:id="b_skomentuj" layoutX="635.0" layoutY="304.0" mnemonicParsing="false" style="-fx-background-color: #3b7244;" text="Skomentuj" textFill="WHITE" />
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
