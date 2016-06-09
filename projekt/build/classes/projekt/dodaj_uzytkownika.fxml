@@ -7,34 +7,29 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="361.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.Dodaj_uzytkownikaController">
+<AnchorPane id="AnchorPane" prefHeight="363.0" prefWidth="361.0" style="-fx-background-color: #2a2a2a;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projekt.Dodaj_uzytkownikaController">
    <children>
-      <Label layoutX="39.0" layoutY="32.0" text="Dodaj użytkownika">
+      <Label layoutX="39.0" layoutY="32.0" text="Dodaj użytkownika" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <Label layoutX="56.0" layoutY="107.0" text="Imię">
+      <Label layoutX="56.0" layoutY="107.0" text="Imię" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="52.0" layoutY="178.0" text="Telefon">
+      <Label layoutX="55.0" layoutY="178.0" text="Telefon" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="54.0" layoutY="140.0" text="Nazwisko">
+      <Label layoutX="55.0" layoutY="140.0" text="Nazwisko" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="50.0" layoutY="214.0" text="E-mail">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="50.0" layoutY="257.0" text="Status">
+      <Label layoutX="59.0" layoutY="214.0" text="E-mail" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
@@ -43,8 +38,7 @@
       <TextField fx:id="f_nazwisko" layoutX="161.0" layoutY="138.0" />
       <TextField fx:id="f_telefon" layoutX="161.0" layoutY="176.0" />
       <TextField fx:id="f_email" layoutX="161.0" layoutY="212.0" />
-      <ComboBox fx:id="c_status" layoutX="161.0" layoutY="255.0" prefWidth="150.0" />
-      <Button fx:id="b_zapisz" layoutX="258.0" layoutY="325.0" mnemonicParsing="false" text="Zapisz" />
-      <Button fx:id="b_anuluj" layoutX="187.0" layoutY="325.0" mnemonicParsing="false" text="Anuluj" />
+      <Button fx:id="b_zapisz" layoutX="254.0" layoutY="290.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="63.0" style="-fx-background-color: #3b7244;" text="Zapisz" textFill="WHITE" />
+      <Button fx:id="b_anuluj" layoutX="173.0" layoutY="290.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="63.0" style="-fx-background-color: #3b7244;" text="Anuluj" textFill="WHITE" />
    </children>
 </AnchorPane>
